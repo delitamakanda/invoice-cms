@@ -25,6 +25,14 @@ const routes = [
     }
   },
   {
+    path: '/dashboard/my-account/edit-team',
+    name: 'editTeam',
+    component: () => import(/* webpackChunkName: "editTeam" */ '../views/dashboard/teams/EditTeamView.vue'),
+    meta: {
+      requireLogin: true
+    }
+  },
+  {
     path: '/dashboard/clients',
     name: 'clients',
     component: () => import(/* webpackChunkName: "clients" */ '../views/dashboard/clients/ClientsView.vue'),

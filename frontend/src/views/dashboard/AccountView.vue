@@ -2,7 +2,14 @@
   <div class="page-account">
     <h1>Account</h1>
 
-    <a-button @click="logout()" type="primary">Log out</a-button>
+    <a-space>
+      <router-link to="/dashboard/my-account/edit-team">
+        <a-button type="primary">Edit team</a-button>
+      </router-link>
+      <a-button @click="logout()" type="text" danger>Log out</a-button>
+    </a-space>
+
+    
 
   </div>
 </template>
