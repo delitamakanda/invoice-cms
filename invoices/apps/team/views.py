@@ -4,13 +4,13 @@ from django.core.exceptions import PermissionDenied
 
 from rest_framework import viewsets
 
-from .models import Client
+from .models import Team
 
-from .serializers import ClientSerializer
+from .serializers import TeamSerializer
 
-class ClientViewSet(viewsets.ModelViewSet):
-    serializer_class = ClientSerializer
-    queryset = Client.objects.all()
+class TeamViewSet(viewsets.ModelViewSet):
+    serializer_class = TeamSerializer
+    queryset = Team.objects.all()
 
     def get_queryset(self):
         return self.queryset.filter(created_by=self.request.user)

@@ -27,7 +27,23 @@ const routes = [
   {
     path: '/dashboard/clients',
     name: 'clients',
-    component: () => import(/* webpackChunkName: "clients" */ '../views/dashboard/ClientsView.vue'),
+    component: () => import(/* webpackChunkName: "clients" */ '../views/dashboard/clients/ClientsView.vue'),
+    meta: {
+      requireLogin: true
+    }
+  },
+  {
+    path: '/dashboard/clients/add',
+    name: 'addClient',
+    component: () => import(/* webpackChunkName: "addClient" */ '../views/dashboard/clients/AddClientView.vue'),
+    meta: {
+      requireLogin: true
+    }
+  },
+  {
+    path: '/dashboard/clients/:id/edit',
+    name: 'editClient',
+    component: () => import(/* webpackChunkName: "editClient" */ '../views/dashboard/clients/EditClientView.vue'),
     meta: {
       requireLogin: true
     }
@@ -35,7 +51,7 @@ const routes = [
   {
     path: '/dashboard/clients/:id',
     name: 'client',
-    component: () => import(/* webpackChunkName: "client" */ '../views/dashboard/ClientView.vue'),
+    component: () => import(/* webpackChunkName: "client" */ '../views/dashboard/clients/ClientView.vue'),
     meta: {
       requireLogin: true
     }

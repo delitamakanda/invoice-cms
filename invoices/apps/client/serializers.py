@@ -22,4 +22,6 @@ class ClientSerializer(serializers.ModelSerializer):
             'country',
             'contact_person',
             'contact_reference',
+            'created_by',
+            'created_at',
         )

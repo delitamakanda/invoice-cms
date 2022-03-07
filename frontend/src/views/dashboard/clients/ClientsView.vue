@@ -2,9 +2,11 @@
   <div class="page-clients">
       <h1>Clients</h1>
 
+      <router-link :to="{name: 'addClient' }"><a-button style="margin-bottom: 16px" type="primary">Add client</a-button></router-link>
+
       <a-table :columns="columns" :row-key="record => record.id" :data-source="state.clients">
-    <template #name="{ text }">
-      <span>{{ text }}</span>
+    <template #name="{ record }">
+      <router-link :to="{ name: 'client', params: { id: record.id }}">{{ record.name }}</router-link>
     </template>
     <template #customTitle>
       <span>
@@ -17,24 +19,27 @@
         {{ text }}
       </span>
     </template>
-    <template #action="{ record }">
+    <template #address1="{ text }">
       <span>
-        <router-link :to="{ name: 'client', params: { id: record.id }}">Edit 一 {{ record.name }}</router-link>
-        <a-divider type="vertical" />
-        <a>Delete</a>
+        {{ text }}
+      </span>
+    </template>
+    <!-- <template #action="{ record }">
+      <span>
+        <a>Delete 一 {{ record.name }}</a>
         <a-divider type="vertical" />
         <a class="ant-dropdown-link">
           More actions
           <down-outlined />
         </a>
       </span>
-    </template>
+    </template> -->
   </a-table>
   </div>
 </template>
 
 <script>
-import { authAxios } from '../../utils/auth'
+import { authAxios } from '../../../utils/auth'
 import { SmileOutlined, DownOutlined } from '@ant-design/icons-vue'
 import { defineComponent, reactive } from 'vue'
 
@@ -42,7 +47,6 @@ const columns = [
   {
     dataIndex: 'name',
     key: 'name',
-    sorter: true,
     slots: {
       title: 'customTitle',
       customRender: 'name',
@@ -54,11 +58,9 @@ const columns = [
     key: 'email'
   },
   {
-    title: 'Action',
-    key: 'action',
-    slots: {
-      customRender: 'action',
-    },
+    title: 'Address',
+    key: 'address1',
+    dataIndex: 'address1'
   },
 ];
 
