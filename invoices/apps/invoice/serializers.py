@@ -6,6 +6,9 @@ class ItemSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Item
+        read_only_fields = (
+            'invoice',
+        )
         fields = (
             'id',
             'invoice',
@@ -19,11 +22,13 @@ class ItemSerializer(serializers.ModelSerializer):
 
 
 class InvoiceSerializer(serializers.ModelSerializer):
+    items = ItemSerializer(many=True)
 
     class Meta:
         model = Invoice
         read_only_fields = (
             'team',
+            'invoice_number',
             'created_by',
             'modified_by',
             'created_at',
@@ -45,8 +50,9 @@ class InvoiceSerializer(serializers.ModelSerializer):
             'sender_reference',
             'invoice_type',
             'due_days',
-            'is_credit_for'
+            'is_credit_for',
             'is_sent',
+            'is_paid',
             'gross_amount',
             'vat_amount',
             'net_amount',
@@ -57,4 +63,14 @@ class InvoiceSerializer(serializers.ModelSerializer):
             'modified_by',
             'created_at',
             'modified_at',
+            'items',
         )
+    
+    def create(self, validated_data):
+        items_data = validated_data.pop('items')
+        invoice = Invoice.objects.create(**validated_data)
+
+        for item in items_data:
+            Item.objects.create(invoice=invoice, **item)
+
+        return invoice

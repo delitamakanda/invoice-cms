@@ -65,6 +65,30 @@ const routes = [
     }
   },
   {
+    path: '/dashboard/invoices',
+    name: 'invoices',
+    component: () => import(/* webpackChunkName: "invoices" */ '../views/dashboard/invoices/InvoicesView.vue'),
+    meta: {
+      requireLogin: true
+    }
+  },
+  {
+    path: '/dashboard/invoices/:id',
+    name: 'invoice',
+    component: () => import(/* webpackChunkName: "invoice" */ '../views/dashboard/invoices/InvoiceView.vue'),
+    meta: {
+      requireLogin: true
+    }
+  },
+  {
+    path: '/dashboard/invoices/add',
+    name: 'createInvoice',
+    component: () => import(/* webpackChunkName: "createInvoice" */ '../views/dashboard/invoices/AddInvoiceView.vue'),
+    meta: {
+      requireLogin: true
+    }
+  },
+  {
     path: '/sign-in',
     name: 'signin',
     component: () => import(/* webpackChunkName: "signin" */ '../views/SignInView.vue')

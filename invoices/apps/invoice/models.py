@@ -1,4 +1,3 @@
-import uuid
 from django.contrib.auth.models import User
 from django.db import models
 
@@ -14,7 +13,7 @@ class Invoice(models.Model):
         (CREDIT_NOTE, 'Credit note'),
     )
 
-    invoice_number = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    invoice_number = models.IntegerField(default=1)
     client_name = models.CharField(max_length=255)
     client_email = models.EmailField()
     client_org_number = models.CharField(max_length=255, blank=True, null=True)
@@ -30,6 +29,7 @@ class Invoice(models.Model):
     due_days = models.IntegerField(default=14)
     is_credit_for = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True)
     is_sent = models.BooleanField(default=False)
+    is_paid = models.BooleanField(default=False)
     gross_amount = models.DecimalField(max_digits=6, decimal_places=2)
     vat_amount = models.DecimalField(max_digits=6, decimal_places=2)
     net_amount = models.DecimalField(max_digits=6, decimal_places=2)
@@ -41,6 +41,8 @@ class Invoice(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        ordering = ('-created_at',)
 
     def __str__(self):
         return '%s : %s' % (self.invoice_number, self.client_name)
