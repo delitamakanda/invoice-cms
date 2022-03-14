@@ -34,6 +34,12 @@
         <a-form-item class="add-item">
             <a-button type="primary" @click.prevent="addItem">+</a-button>
         </a-form-item>
+        <a-form-item ref="due_days" label="Due days" name="due_days">
+            <a-input v-model:value="modelRef.due_days" placeholder="input placeholder" />
+        </a-form-item>
+        <a-form-item ref="sender_reference" label="Sender reference" name="sender_reference">
+            <a-input v-model:value="modelRef.sender_reference" placeholder="input placeholder" />
+        </a-form-item>
         <a-form-item label="Total">
             <a-space direction="vertical">
                 <a-typography-text><strong>Net amount</strong> : {{ modelRef.net_amount }}</a-typography-text>
@@ -66,6 +72,8 @@ export default defineComponent ({
 
         const modelRef = reactive({
             client: undefined,
+            due_days: 14,
+            sender_reference: '',
             clientDetail: [],
             selectedClient: undefined,
             net_amount: 0,
@@ -90,6 +98,18 @@ export default defineComponent ({
                 {
                 required: true,
                 message: 'Please select client',
+                },
+            ],
+            due_days: [
+                {
+                required: false,
+                message: 'Please Due days input',
+                },
+            ],
+            sender_reference: [
+                {
+                required: false,
+                message: 'Please Sender reference input',
                 },
             ],
         });
@@ -122,7 +142,9 @@ export default defineComponent ({
                 gross_amount: filters.decimal(toRaw(modelRef).gross_amount),
                 net_amount: filters.decimal(toRaw(modelRef).net_amount),
                 vat_amount: filters.decimal(toRaw(modelRef).vat_amount),
-                items: toRaw(modelRef).items
+                items: toRaw(modelRef).items,
+                due_days: toRaw(modelRef).due_days,
+                sender_reference: toRaw(modelRef).sender_reference
             }
             authAxios.post('api/v1/invoices/', JSON.stringify(formData))
                 .then(response => {

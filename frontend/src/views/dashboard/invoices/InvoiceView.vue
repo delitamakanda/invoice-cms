@@ -7,6 +7,8 @@
       sub-title="Invoice details"
       @back="() => $router.go(-1)"
     >
+
+      <a-button type="primary" @click="downloadPdf()">Download PDF</a-button>
       <a-descriptions size="small" :column="3">
         <a-descriptions-item label="Client">{{state.invoice.client_name}}</a-descriptions-item>
         <a-descriptions-item v-if="state.invoice.client_address1" label="Address">
@@ -28,7 +30,8 @@
         class="ant-table-striped"
         size="middle"
         :columns="columns"
-        :data-source="state.items"
+        :row-key="record => record.id" 
+        :data-source="state.invoice.items"
         :rowClassName="(record, index) => (index % 2 === 1 ? 'table-striped' : null)"
     />
 
@@ -39,6 +42,7 @@
 import { authAxios } from '../../../utils/auth'
 import { defineComponent, reactive } from 'vue'
 import { useRoute } from 'vue-router'
+const fileDownload = require('js-file-download')
 
 const columns = [
   {
@@ -64,7 +68,6 @@ export default defineComponent ({
 
         const state = reactive({
             invoice: {},
-            items: []
         })
 
         const route = useRoute()
@@ -77,21 +80,21 @@ export default defineComponent ({
                 console.log(JSON.stringify(error))
             })
 
-        authAxios.get(`api/v1/items/?invoice_id=${route.params.id}`)
+        const downloadPdf = () => {
+          authAxios.get(`/api/v1/invoices/${route.params.id}/generate_pdf/`, { responseType: 'blob', timeout: 30000})
             .then(response => {
-                for(let i = 0; i< response.data.length;i++) {
-                    state.items.push(response.data[i])
-                }
+              fileDownload(response.data, `invoice_${route.params.id}.pdf`)
             })
             .catch(error => {
-                console.log(JSON.stringify(error))
+              console.log(JSON.stringify(error))
             })
-
+        } 
 
         return {
             state,
             route,
             columns,
+            downloadPdf,
         }
     }
 })

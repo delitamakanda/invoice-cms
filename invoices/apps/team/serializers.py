@@ -14,5 +14,6 @@ class TeamSerializer(serializers.ModelSerializer):
             'name',
             'org_number',
             'first_invoice_number',
+            'bankaccount',
             'created_by',
         )

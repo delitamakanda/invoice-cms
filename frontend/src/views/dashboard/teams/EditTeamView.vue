@@ -16,6 +16,9 @@
         <a-form-item ref="first_invoice_number" label="First invoice number" name="first_invoice_number">
         <a-input v-model:value="formState.first_invoice_number" placeholder="input placeholder" />
         </a-form-item>
+        <a-form-item ref="bankaccount" label="Bank account" name="bankaccount">
+        <a-input v-model:value="formState.bankaccount" placeholder="input placeholder" />
+        </a-form-item>
         <a-form-item :wrapper-col="{ span: 14, offset: 4 }">
         <a-button type="primary" @click="onSubmit">Save changes</a-button>
         </a-form-item>
@@ -39,6 +42,7 @@ export default defineComponent ({
             name: '',
             org_number: '',
             first_invoice_number: '',
+            bankaccount: ''
         })
 
         authAxios.get('api/v1/teams/')
@@ -47,6 +51,7 @@ export default defineComponent ({
                 formState.name = response.data[0].name
                 formState.org_number = response.data[0].org_number
                 formState.first_invoice_number = response.data[0].first_invoice_number
+                formState.bankaccount = response.data[0].bankaccount
             })
             .catch(error => {
                 console.log(JSON.stringify(error))
@@ -71,6 +76,13 @@ export default defineComponent ({
                 {
                     required: false,
                     message: 'Please input First invoice number',
+                    trigger: 'blur',
+                }
+            ],
+            bankaccount: [
+                {
+                    required: false,
+                    message: 'Please input Bank account',
                     trigger: 'blur',
                 }
             ]

@@ -6,7 +6,7 @@
 
       <a-table :columns="columns" :row-key="record => record.invoice_number" :data-source="state.invoices">
     <template #invoice_number="{ record }">
-      <router-link :to="{ name: 'invoice', params: { id: record.id }}">{{ record.id }}</router-link>
+      <router-link :to="{ name: 'invoice', params: { id: record.id }}">{{ record.invoice_number }}</router-link>
     </template>
     <template #customTitle>
       <span>
@@ -34,11 +34,11 @@
         Is paid
       </span>
     </template>
-    <!-- <template #action="{ record }">
+    <template #action="{ record }">
       <span>
-        <a>Delete 一 {{ record.client_name }}</a>
+        <router-link :to="{ name: 'invoice', params: { id: record.id }}">details</router-link>
       </span>
-    </template> -->
+    </template>
   </a-table>
   </div>
 </template>

@@ -28,6 +28,7 @@
       </a-button>
     </a-form-item>
   </a-form>
+  <router-link to="/sign-up">Sign up</router-link>
   </div>
 </template>
 

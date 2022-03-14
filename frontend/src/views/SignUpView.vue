@@ -25,6 +25,7 @@
       <a-button style="margin-left: 10px" @click="resetForm">Reset</a-button>
     </a-form-item>
   </a-form>
+  <router-link to="sign-in">Sign in</router-link>
   </div>
 </template>
 
