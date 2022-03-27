@@ -1,5 +1,12 @@
 <template>
   <div class="page-client">
+
+    <a-breadcrumb>
+    <a-breadcrumb-item><router-link to="/dashboard">Dashboard</router-link></a-breadcrumb-item>
+    <a-breadcrumb-item><router-link to="/dashboard/clients">Clients</router-link></a-breadcrumb-item>
+    <a-breadcrumb-item aria-current="true"><router-link :to="{ name: 'client', params: { id: route.params.id }}">{{state.client.name}}</router-link></a-breadcrumb-item>
+  </a-breadcrumb>
+
     <a-page-header
       class="demo-page-header"
       style="border: 1px solid rgb(235, 237, 240)"

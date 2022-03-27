@@ -1,6 +1,12 @@
 <template>
 <div>
 
+    <a-breadcrumb>
+    <a-breadcrumb-item><router-link to="/dashboard">Dashboard</router-link></a-breadcrumb-item>
+    <a-breadcrumb-item><router-link to="/dashboard/clients">Clients</router-link></a-breadcrumb-item>
+    <a-breadcrumb-item aria-current="true"><router-link :to="{ name: 'editClient', params: { id: route.params.id }}">{{formState.name}}</router-link></a-breadcrumb-item>
+  </a-breadcrumb>
+
     <a-page-header
     style="border: 1px solid rgb(235, 237, 240); margin-bottom: 16px"
     :title="'Edit ' + formState.name"

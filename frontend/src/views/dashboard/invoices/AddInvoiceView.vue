@@ -1,6 +1,12 @@
 <template>
   <div class="page-add-invoice">
-      <h1>Add invoice</h1>
+
+      <a-breadcrumb>
+    <a-breadcrumb-item><router-link to="/dashboard">Dashboard</router-link></a-breadcrumb-item>
+    <a-breadcrumb-item><router-link to="/dashboard/invoices">Invoices</router-link></a-breadcrumb-item>
+    <a-breadcrumb-item aria-current="true"><router-link to="/dashboard/invoices/add">Add</router-link></a-breadcrumb-item>
+  </a-breadcrumb>
+
 
 
       <a-form :label-col="labelCol" layout="vertical" :wrapper-col="wrapperCol">

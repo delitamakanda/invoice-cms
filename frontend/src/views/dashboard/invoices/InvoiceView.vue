@@ -1,5 +1,12 @@
 <template>
   <div class="page-invoice">
+
+    <a-breadcrumb>
+    <a-breadcrumb-item><router-link to="/dashboard">Dashboard</router-link></a-breadcrumb-item>
+    <a-breadcrumb-item><router-link to="/dashboard/invoices">Invoices</router-link></a-breadcrumb-item>
+    <a-breadcrumb-item aria-current="true"><router-link :to="{ name: 'invoice', params: { id: route.params.id }}">Invoice #{{state.invoice.invoice_number}}</router-link></a-breadcrumb-item>
+  </a-breadcrumb>
+
     <a-page-header
       class="demo-page-header"
       style="border: 1px solid rgb(235, 237, 240)"
@@ -8,7 +15,10 @@
       @back="() => $router.go(-1)"
     >
 
-      <a-button type="primary" @click="downloadPdf()">Download PDF</a-button>
+      <div class="buttons">
+        <a-button type="primary" @click="downloadPdf()">Download PDF</a-button>
+        <a-button type="secondary" v-if="!state.invoice.is_paid" @click="setAsPaid()">Set as paid</a-button>
+      </div>
       <a-descriptions size="small" :column="3">
         <a-descriptions-item label="Client">{{state.invoice.client_name}}</a-descriptions-item>
         <a-descriptions-item v-if="state.invoice.client_address1" label="Address">
@@ -35,6 +45,23 @@
         :rowClassName="(record, index) => (index % 2 === 1 ? 'table-striped' : null)"
     />
 
+    <h3>Summary</h3>
+    <a-row type="flex" justify="center" align="top">
+      <a-col :span="12">
+        <p><strong>Net amount</strong> {{ state.invoice.net_amount }}</p>
+        <p><strong>Vat amount</strong> {{ state.invoice.vat_amount }}</p>
+        <p><strong>Gross amount</strong> {{ state.invoice.gross_amount }}</p>
+        <p><strong>Bank account</strong> {{ state.invoice.bankaccount }}</p>
+      </a-col>
+      <a-col :span="12">
+        <p><strong>Our reference</strong> {{ state.invoice.sender_reference }}</p>
+        <p><strong>Client reference</strong> {{ state.invoice.client_contact_reference }}</p>
+        <p><strong>Due date</strong> {{ state.invoice.get_due_date_formatted }}</p>
+        <p><strong>Status</strong> {{ getStatusLabel(state.invoice) }}</p>
+        <p><strong>Invoice type</strong> {{ getInvoiceType(state.invoice) }}</p>
+      </a-col>
+    </a-row>
+
   </div>
 </template>
 
@@ -43,6 +70,7 @@ import { authAxios } from '../../../utils/auth'
 import { defineComponent, reactive } from 'vue'
 import { useRoute } from 'vue-router'
 const fileDownload = require('js-file-download')
+import { message } from 'ant-design-vue'
 
 const columns = [
   {
@@ -58,7 +86,11 @@ const columns = [
     dataIndex: 'quantity',
   },
   {
-    title: 'Amount',
+    title: 'Vat rate',
+    dataIndex: 'vat_rate',
+  },
+  {
+    title: 'Total',
     dataIndex: 'net_amount',
   },
 ];
@@ -90,11 +122,50 @@ export default defineComponent ({
             })
         } 
 
+        const setAsPaid = async () => {
+          state.invoice.is_paid = true
+          let items = state.invoice.items;
+          delete state.invoice['items']
+
+          await authAxios.patch(`/api/v1/invoices/${route.params.id}/`, state.invoice)
+            .then(response => {
+               message.success(`Invoice ${response.data.invoice_number} is paid`)
+            })
+            .catch(error => {
+              console.log(JSON.stringify(error))
+            })
+          
+          state.invoice.items = items
+        } 
+
         return {
             state,
             route,
             columns,
             downloadPdf,
+            setAsPaid,
+        }
+    },
+    methods: {
+        getStatusLabel(invoice) {
+            if (invoice.is_paid) {
+                return 'Paid'
+            } else {
+                return 'Not paid'
+            }
+        },
+        getInvoiceType(invoice) {
+            if (invoice.invoice_type === 'invoice') {
+                return 'Invoice'
+            } else {
+                return 'Credit note'
+            }
+        },
+        getItemTotal(item) {
+            const unit_price = item.unit_price
+            const quantity = item.quantity
+            const total = item.net_amount + (item.net_amount * (item.vat_rate / 100))
+            return parseFloat(total).toFixed(2)
         }
     }
 })

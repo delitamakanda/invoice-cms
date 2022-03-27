@@ -16,4 +16,9 @@ class TeamSerializer(serializers.ModelSerializer):
             'first_invoice_number',
             'bankaccount',
             'created_by',
+            'email',
+            'address1',
+            'address2',
+            'zip_code',
+            'place',
         )

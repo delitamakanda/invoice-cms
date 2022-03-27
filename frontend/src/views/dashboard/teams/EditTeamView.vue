@@ -16,6 +16,21 @@
         <a-form-item ref="first_invoice_number" label="First invoice number" name="first_invoice_number">
         <a-input v-model:value="formState.first_invoice_number" placeholder="input placeholder" />
         </a-form-item>
+        <a-form-item ref="email" label="Email" name="email">
+        <a-input v-model:value="formState.email" type="email" placeholder="input placeholder" />
+        </a-form-item>
+        <a-form-item ref="address1" label="Address 1" name="address1">
+        <a-input v-model:value="formState.address1" placeholder="input placeholder" />
+        </a-form-item>
+        <a-form-item ref="address2" label="Address 2" name="address2">
+        <a-input v-model:value="formState.address2" placeholder="input placeholder" />
+        </a-form-item>
+        <a-form-item ref="zip_code" label="Zip code" name="zip_code">
+        <a-input v-model:value="formState.zip_code" placeholder="input placeholder" />
+        </a-form-item>
+        <a-form-item ref="place" label="Place" name="place">
+        <a-input v-model:value="formState.place" placeholder="input placeholder" />
+        </a-form-item>
         <a-form-item ref="bankaccount" label="Bank account" name="bankaccount">
         <a-input v-model:value="formState.bankaccount" placeholder="input placeholder" />
         </a-form-item>
@@ -42,6 +57,11 @@ export default defineComponent ({
             name: '',
             org_number: '',
             first_invoice_number: '',
+            email: '',
+            address1: '',
+            address2: '',
+            zip_code: '',
+            place: '',
             bankaccount: ''
         })
 
@@ -51,6 +71,11 @@ export default defineComponent ({
                 formState.name = response.data[0].name
                 formState.org_number = response.data[0].org_number
                 formState.first_invoice_number = response.data[0].first_invoice_number
+                formState.email = response.data[0].email
+                formState.address1 = response.data[0].address1
+                formState.address2 = response.data[0].address2
+                formState.zip_code = response.data[0].zip_code
+                formState.place = response.data[0].place
                 formState.bankaccount = response.data[0].bankaccount
             })
             .catch(error => {
@@ -72,16 +97,44 @@ export default defineComponent ({
                     trigger: 'blur',
                 }
             ],
-            first_invoice_number: [
+            email: [
                 {
                     required: false,
-                    message: 'Please input First invoice number',
+                    message: 'Please input Email',
+                    trigger: 'blur',
+                }
+            ],
+            address1: [
+                {
+                    required: false,
+                    message: 'Please input Address',
+                    trigger: 'blur',
+                }
+            ],
+            address2: [
+                {
+                    required: false,
+                    message: 'Please input Address',
+                    trigger: 'blur',
+                }
+            ],
+            zip_code: [
+                {
+                    required: false,
+                    message: 'Please input Zip code number',
+                    trigger: 'blur',
+                }
+            ],
+            place: [
+                {
+                    required: false,
+                    message: 'Please input Place',
                     trigger: 'blur',
                 }
             ],
             bankaccount: [
                 {
-                    required: false,
+                    required: true,
                     message: 'Please input Bank account',
                     trigger: 'blur',
                 }

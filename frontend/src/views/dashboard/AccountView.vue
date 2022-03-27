@@ -1,6 +1,12 @@
 <template>
   <div class="page-account">
-    <h1>Account</h1>
+    <h1></h1>
+
+  <a-breadcrumb>
+    <a-breadcrumb-item><router-link to="/dashboard">Dashboard</router-link></a-breadcrumb-item>
+    <a-breadcrumb-item aria-current="true"><router-link to="/dashboard/my-account">My account</router-link></a-breadcrumb-item>
+  </a-breadcrumb>
+
 
     <p><strong>My account</strong> : {{ $store.state['user'].user.username }}</p>
 

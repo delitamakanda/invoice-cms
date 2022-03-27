@@ -66,6 +66,7 @@ class InvoiceSerializer(serializers.ModelSerializer):
             'created_at',
             'modified_at',
             'items',
+            'get_due_date_formatted',
         )
     
     def create(self, validated_data):

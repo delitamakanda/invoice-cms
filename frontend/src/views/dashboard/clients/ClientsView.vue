@@ -1,8 +1,9 @@
 <template>
   <div class="page-clients">
-      <h1>Clients</h1>
-
-      <router-link :to="{name: 'addClient' }"><a-button style="margin-bottom: 16px" type="primary">Add client</a-button></router-link>
+      <a-breadcrumb>
+        <a-breadcrumb-item>Dashboard</a-breadcrumb-item>
+        <a-breadcrumb-item aria-current="true"><router-link to="/dashboard/clients">Clients</router-link></a-breadcrumb-item>
+      </a-breadcrumb>
 
       <a-table :columns="columns" :row-key="record => record.id" :data-source="state.clients">
     <template #name="{ record }">
@@ -35,6 +36,7 @@
       </span>
     </template> -->
   </a-table>
+   <router-link :to="{name: 'addClient' }"><a-button style="margin-top: 16px" type="primary">Add client</a-button></router-link>
   </div>
 </template>
 

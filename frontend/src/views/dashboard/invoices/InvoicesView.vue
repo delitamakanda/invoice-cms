@@ -1,12 +1,13 @@
 <template>
   <div class="page-invoices">
-      <h1>Invoices</h1>
-
-      <!-- <router-link :to="{name: 'addClient' }"><a-button style="margin-bottom: 16px" type="primary">Add client</a-button></router-link> -->
+      <a-breadcrumb>
+        <a-breadcrumb-item>Dashboard</a-breadcrumb-item>
+        <a-breadcrumb-item aria-current="true"><router-link to="/dashboard/invoices">Invoices</router-link></a-breadcrumb-item>
+      </a-breadcrumb>
 
       <a-table :columns="columns" :row-key="record => record.invoice_number" :data-source="state.invoices">
     <template #invoice_number="{ record }">
-      <router-link :to="{ name: 'invoice', params: { id: record.id }}">{{ record.invoice_number }}</router-link>
+      {{ record.invoice_number }}
     </template>
     <template #customTitle>
       <span>
@@ -29,6 +30,11 @@
     <template #is_paid="{ record }">
       {{getStatusLabel(record)}}
     </template>
+    <template #getDueDate>
+      <span>
+        Due date
+      </span>
+    </template>
     <template #isPaid>
       <span>
         Is paid
@@ -40,6 +46,7 @@
       </span>
     </template>
   </a-table>
+     <router-link to="/dashboard/invoices/add"><a-button style="margin-top: 16px" type="primary">Add invoice</a-button></router-link>
   </div>
 </template>
 
@@ -67,6 +74,14 @@ const columns = [
     slots: {
       title: 'Amount',
       customRender: 'gross_amount',
+    },
+  },
+  {
+    key: 'get_due_date_formatted',
+    dataIndex: 'get_due_date_formatted',
+    slots: {
+      title: 'getDueDate',
+      customRender: 'get_due_date_formatted',
     },
   },
   {
