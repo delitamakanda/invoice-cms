@@ -17,7 +17,12 @@
 
       <div class="buttons">
         <a-button type="primary" @click="downloadPdf()">Download PDF</a-button>
-        <a-button type="secondary" v-if="!state.invoice.is_paid" @click="setAsPaid()">Set as paid</a-button>
+
+        <template v-if="!state.invoice.is_credit_for && !state.invoice.is_credited">
+        <a-button type="default" v-if="!state.invoice.is_paid" @click="setAsPaid()">Set as paid</a-button>
+        <a-button type="ghost" v-if="!state.invoice.is_paid" @click="createCreditNote()">Create credit note</a-button>
+        </template>
+        <a-button type="default" v-if="!state.invoice.is_paid && !state.invoice.is_credit_for" @click="sendReminder()">Send reminder</a-button>
       </div>
       <a-descriptions size="small" :column="3">
         <a-descriptions-item label="Client">{{state.invoice.client_name}}</a-descriptions-item>
@@ -68,7 +73,7 @@
 <script>
 import { authAxios } from '../../../utils/auth'
 import { defineComponent, reactive } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 const fileDownload = require('js-file-download')
 import { message } from 'ant-design-vue'
 
@@ -103,6 +108,7 @@ export default defineComponent ({
         })
 
         const route = useRoute()
+        const router = useRouter()
 
         authAxios.get(`api/v1/invoices/${route.params.id}/`)
             .then(response => {
@@ -116,6 +122,16 @@ export default defineComponent ({
           authAxios.get(`/api/v1/invoices/${route.params.id}/generate_pdf/`, { responseType: 'blob', timeout: 30000})
             .then(response => {
               fileDownload(response.data, `invoice_${route.params.id}.pdf`)
+            })
+            .catch(error => {
+              console.log(JSON.stringify(error))
+            })
+        }
+
+        const sendReminder = () => {
+          authAxios.get(`/api/v1/invoices/${route.params.id}/send_reminder/`, { timeout: 30000})
+            .then(response => {
+              // todo
             })
             .catch(error => {
               console.log(JSON.stringify(error))
@@ -138,12 +154,49 @@ export default defineComponent ({
           state.invoice.items = items
         } 
 
+        const createCreditNote = async () => {
+          state.invoice.is_credited = true
+
+          let items = state.invoice.items;
+          delete state.invoice['items']
+
+          await authAxios.patch(`/api/v1/invoices/${route.params.id}/`, state.invoice)
+            .then(response => {
+               message.success(`Invoice ${response.data.invoice_number} successfully changed`)
+            })
+            .catch(error => {
+              console.log(JSON.stringify(error))
+            })
+
+          state.invoice.items = items
+          
+          let creditNote = state.invoice
+          creditNote.is_credit_for = state.invoice.id
+          creditNote.is_credited = false
+          creditNote.invoice_type = 'credit_note'
+
+          delete creditNote['id']
+
+          await authAxios.post(`/api/v1/invoices/`, creditNote)
+            .then(response => {
+               message.success(`Credit note ${response.data.invoice_number} successfully added`)
+               router.push('/dashboard/invoices')
+            })
+            .catch(error => {
+              console.log(JSON.stringify(error))
+            })
+
+        } 
+
         return {
             state,
             route,
+            router,
             columns,
             downloadPdf,
             setAsPaid,
+            createCreditNote,
+            sendReminder,
         }
     },
     methods: {

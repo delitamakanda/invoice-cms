@@ -52,6 +52,7 @@ class InvoiceSerializer(serializers.ModelSerializer):
             'invoice_type',
             'due_days',
             'is_credit_for',
+            'is_credited',
             'is_sent',
             'is_paid',
             'bankaccount',

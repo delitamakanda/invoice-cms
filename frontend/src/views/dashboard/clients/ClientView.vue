@@ -37,20 +37,89 @@
         </a-descriptions-item>
       </a-descriptions>
     </a-page-header>
+
+    <div v-if="unpaidInvoices.length">
+      <div>
+        <h2>Unpaid invoices</h2>
+
+        <a-table
+        class="ant-table-striped"
+        size="middle"
+        :columns="columns"
+        :row-key="record => record.id" 
+        :data-source="unpaidInvoices"
+        :rowClassName="(record, index) => (index % 2 === 1 ? 'table-striped' : null)"
+    >
+    <template #action="{ record }">
+      <span>
+        <router-link :to="{ name: 'invoice', params: { id: record.id }}">details</router-link>
+      </span>
+    </template>
+        </a-table>
+      </div>
+    </div>
+    <div v-if="paidInvoices.length">
+      <div>
+        <h2>Paid invoices</h2>
+        <a-table
+        class="ant-table-striped"
+        size="middle"
+        :columns="columns"
+        :row-key="record => record.id" 
+        :data-source="paidInvoices"
+        :rowClassName="(record, index) => (index % 2 === 1 ? 'table-striped' : null)"
+    >
+    <template #action="{ record }">
+      <span>
+        <router-link :to="{ name: 'invoice', params: { id: record.id }}">details</router-link>
+      </span>
+    </template>
+        </a-table>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import { authAxios } from '../../../utils/auth'
-import { defineComponent, reactive } from 'vue'
+import { defineComponent, reactive, computed } from 'vue'
 import { useRoute } from 'vue-router'
+
+const columns = [
+  {
+    title: '#',
+    dataIndex: 'id',
+  },
+  {
+    title: 'Amount',
+    dataIndex: 'net_amount',
+  },
+  {
+    title: 'Due date',
+    dataIndex: 'get_due_date_formatted',
+  },
+  {
+    title: '',
+    key: 'action',
+    dataIndex: 'action',
+    slots: {
+      customRender: 'action',
+    },
+  },
+];
 
 export default defineComponent ({
     setup() {
 
         const state = reactive({
-            client: {},
+            client: {
+              invoices: []
+            },
         })
+
+        const unpaidInvoices = computed(() => state.client.invoices.filter(invoice => invoice.is_paid === false))
+        
+        const paidInvoices = computed(() => state.client.invoices.filter(invoice => invoice.is_paid === true))
 
         const route = useRoute()
 
@@ -66,6 +135,9 @@ export default defineComponent ({
         return {
             state,
             route,
+            unpaidInvoices,
+            paidInvoices,
+            columns,
         }
     }
 })

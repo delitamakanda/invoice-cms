@@ -2,18 +2,17 @@
   <a-layout class="layout">
     <a-layout-header>
       <a-menu theme="dark" mode="horizontal" v-model:selectedKeys="selectedKeys" :style="{ lineHeight: '64px' }">
-        <a-menu-item key="1"><router-link to="/">{{title}}</router-link></a-menu-item>
+        <a-menu-item key="1"><router-link to="/">Dashboard - {{title}}</router-link></a-menu-item>
         <template v-if="store.state['user'].isLoggedIn">
-          <a-menu-item key="2"><router-link to="/dashboard">Dashboard</router-link></a-menu-item>
-          <a-menu-item key="3"><router-link to="/dashboard/clients">Clients</router-link></a-menu-item>
-          <a-menu-item key="4"><router-link to="/dashboard/invoices">Invoices</router-link></a-menu-item>
-          <a-menu-item key="5"><router-link to="/dashboard/my-account">My account</router-link></a-menu-item>
+          <a-menu-item key="2"><router-link to="/dashboard/clients">Clients</router-link></a-menu-item>
+          <a-menu-item key="3"><router-link to="/dashboard/invoices">Invoices</router-link></a-menu-item>
+          <a-menu-item key="4"><router-link to="/dashboard/my-account">My account</router-link></a-menu-item>
         </template>
         <template v-else>
           <a-menu-item key="2"><router-link to="/sign-up">Sign up</router-link></a-menu-item>
           <a-menu-item key="3"><router-link to="/sign-in">Log in</router-link></a-menu-item>
         </template>
-        <a-menu-item key="6"><router-link to="/about">About</router-link></a-menu-item>
+        <a-menu-item :key="!store.state['user'].isLoggedIn ? '4' : '5'"><router-link to="/about">About</router-link></a-menu-item>
       </a-menu>
     </a-layout-header>
     <a-layout-content style="padding: 0 50px">
