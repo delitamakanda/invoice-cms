@@ -1,6 +1,26 @@
 import store from '@/store'
 import { createRouter, createWebHistory } from 'vue-router'
 
+import DashboardView from '@/views/dashboard/DashboardView'
+
+import AccountView from '@/views/dashboard/AccountView'
+
+import EditTeamView from '@/views/dashboard/teams/EditTeamView'
+
+import ClientsView from '@/views/dashboard/clients/ClientsView'
+import AddClientView from '@/views/dashboard/clients/AddClientView'
+import EditClientView from '@/views/dashboard/clients/EditClientView'
+import ClientView from '@/views/dashboard/clients/ClientView'
+
+import InvoicesView from '@/views/dashboard/invoices/InvoicesView'
+import InvoiceView from '@/views/dashboard/invoices/InvoiceView'
+import AddInvoiceView from '@/views/dashboard/invoices/AddInvoiceView'
+
+import SignInView from '@/views/SignInView'
+import SignUpView from '@/views/SignUpView'
+
+import AboutView from '@/views/AboutView'
+
 const routes = [
   {
     path: '/',
@@ -9,7 +29,7 @@ const routes = [
   {
     path: '/dashboard',
     name: 'dashboard',
-    component: () => import(/* webpackChunkName: "dashboard" */ '../views/dashboard/DashboardView.vue'),
+    component: DashboardView,
     meta: {
       requireLogin: true
     }
@@ -17,7 +37,7 @@ const routes = [
   {
     path: '/dashboard/my-account',
     name: 'account',
-    component: () => import(/* webpackChunkName: "account" */ '../views/dashboard/AccountView.vue'),
+    component: AccountView,
     meta: {
       requireLogin: true
     }
@@ -25,7 +45,7 @@ const routes = [
   {
     path: '/dashboard/my-account/edit-team',
     name: 'editTeam',
-    component: () => import(/* webpackChunkName: "editTeam" */ '../views/dashboard/teams/EditTeamView.vue'),
+    component: EditTeamView,
     meta: {
       requireLogin: true
     }
@@ -33,7 +53,7 @@ const routes = [
   {
     path: '/dashboard/clients',
     name: 'clients',
-    component: () => import(/* webpackChunkName: "clients" */ '../views/dashboard/clients/ClientsView.vue'),
+    component: ClientsView,
     meta: {
       requireLogin: true
     }
@@ -41,7 +61,7 @@ const routes = [
   {
     path: '/dashboard/clients/add',
     name: 'addClient',
-    component: () => import(/* webpackChunkName: "addClient" */ '../views/dashboard/clients/AddClientView.vue'),
+    component: AddClientView,
     meta: {
       requireLogin: true
     }
@@ -49,7 +69,7 @@ const routes = [
   {
     path: '/dashboard/clients/:id/edit',
     name: 'editClient',
-    component: () => import(/* webpackChunkName: "editClient" */ '../views/dashboard/clients/EditClientView.vue'),
+    component: EditClientView,
     meta: {
       requireLogin: true
     }
@@ -57,7 +77,7 @@ const routes = [
   {
     path: '/dashboard/clients/:id',
     name: 'client',
-    component: () => import(/* webpackChunkName: "client" */ '../views/dashboard/clients/ClientView.vue'),
+    component: ClientView,
     meta: {
       requireLogin: true
     }
@@ -65,7 +85,7 @@ const routes = [
   {
     path: '/dashboard/invoices',
     name: 'invoices',
-    component: () => import(/* webpackChunkName: "invoices" */ '../views/dashboard/invoices/InvoicesView.vue'),
+    component: InvoicesView,
     meta: {
       requireLogin: true
     }
@@ -73,7 +93,7 @@ const routes = [
   {
     path: '/dashboard/invoices/:id',
     name: 'invoice',
-    component: () => import(/* webpackChunkName: "invoice" */ '../views/dashboard/invoices/InvoiceView.vue'),
+    component: InvoiceView,
     meta: {
       requireLogin: true
     }
@@ -81,7 +101,7 @@ const routes = [
   {
     path: '/dashboard/invoices/add',
     name: 'createInvoice',
-    component: () => import(/* webpackChunkName: "createInvoice" */ '../views/dashboard/invoices/AddInvoiceView.vue'),
+    component: AddInvoiceView,
     meta: {
       requireLogin: true
     }
@@ -89,20 +109,17 @@ const routes = [
   {
     path: '/sign-in',
     name: 'signin',
-    component: () => import(/* webpackChunkName: "signin" */ '../views/SignInView.vue')
+    component: SignInView
   },
   {
     path: '/sign-up',
     name: 'signup',
-    component: () => import(/* webpackChunkName: "signup" */ '../views/SignUpView.vue')
+    component: SignUpView
   },
   {
     path: '/about',
     name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    component: AboutView
   }
 ]
 

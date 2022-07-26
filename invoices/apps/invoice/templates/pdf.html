@@ -224,7 +224,7 @@
 
                 <div class="items-row-cell header vat-rate">Vat rate</div>
 
-                <div class="items-row-cell header sum">Sum</div>
+                <div class="items-row-cell header sum">Total</div>
 
                 {% for item in invoice.items.all %}
                     <div class="items-row">
@@ -232,11 +232,11 @@
 
                         <div class="items-row-cell quantity">{{ item.quantity }}</div>
 
-                        <div class="items-row-cell unit-price">{{ item.unit_price }}</div>
+                        <div class="items-row-cell unit-price">{{ item.unit_price }}&euro;</div>
 
                         <div class="items-row-cell vat-rate">{{ item.vat_rate }}%</div>
 
-                        <div class="items-row-cell sum">{{ item.get_gross_amount }}</div>
+                        <div class="items-row-cell sum">{{ item.get_gross_amount|floatformat:2 }}&euro;</div>
                     </div>
                 {% endfor %}
             </div>
@@ -256,17 +256,17 @@
             <div class="summary-right">
                 <div class="split">
                     <div class="split-left">Net amount</div>
-                    <div class="split-right">{{ invoice.net_amount }}</div>
+                    <div class="split-right">{{ invoice.net_amount }}&euro;</div>
                 </div>
 
                 <div class="split">
                     <div class="split-left">Vat amount</div>
-                    <div class="split-right">{{ invoice.vat_amount }}</div>
+                    <div class="split-right">{{ invoice.vat_amount }}&euro;</div>
                 </div>
 
                 <div class="split">
                     <div class="split-left"><strong>Amount to pay</strong></div>
-                    <div class="split-right"><strong>{{ invoice.gross_amount }}</strong></div>
+                    <div class="split-right"><strong>{{ invoice.gross_amount }}&euro;</strong></div>
                 </div>
             </div>
         </div>
