@@ -1,4 +1,5 @@
 # Invoices
+cms générateur de factures
 
 ## Backend
 1. python3 -m venv invoices_env
