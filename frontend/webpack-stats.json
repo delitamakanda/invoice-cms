@@ -1,197 +1,37 @@
 {
   "status": "done",
   "assets": {
-    "js/app.js": {
-      "name": "js/app.js",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/js/app.js",
-      "publicPath": "/js/app.js"
+    "css/app.0a1923e6.css": {
+      "name": "css/app.0a1923e6.css",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/css/app.0a1923e6.css",
+      "publicPath": "http://0.0.0.0:8080/css/app.0a1923e6.css"
+    },
+    "js/app.388af494.js": {
+      "name": "js/app.388af494.js",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/js/app.388af494.js",
+      "publicPath": "http://0.0.0.0:8080/js/app.388af494.js"
     },
     "favicon.ico": {
       "name": "favicon.ico",
       "path": "/Users/delitamakanda/projects/invoices/frontend/dist/favicon.ico",
-      "publicPath": "/favicon.ico"
+      "publicPath": "http://0.0.0.0:8080/favicon.ico"
+    },
+    "js/app.388af494.js.map": {
+      "name": "js/app.388af494.js.map",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/js/app.388af494.js.map",
+      "publicPath": "http://0.0.0.0:8080/js/app.388af494.js.map"
     },
     "index.html": {
       "name": "index.html",
       "path": "/Users/delitamakanda/projects/invoices/frontend/dist/index.html",
-      "publicPath": "/index.html"
-    },
-    "app.279acd62ee7145ec.hot-update.js": {
-      "name": "app.279acd62ee7145ec.hot-update.js",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.279acd62ee7145ec.hot-update.js",
-      "publicPath": "/app.279acd62ee7145ec.hot-update.js"
-    },
-    "app.279acd62ee7145ec.hot-update.json": {
-      "name": "app.279acd62ee7145ec.hot-update.json",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.279acd62ee7145ec.hot-update.json",
-      "publicPath": "/app.279acd62ee7145ec.hot-update.json"
-    },
-    "app.62b228a09a079af4.hot-update.js": {
-      "name": "app.62b228a09a079af4.hot-update.js",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.62b228a09a079af4.hot-update.js",
-      "publicPath": "/app.62b228a09a079af4.hot-update.js"
-    },
-    "app.62b228a09a079af4.hot-update.json": {
-      "name": "app.62b228a09a079af4.hot-update.json",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.62b228a09a079af4.hot-update.json",
-      "publicPath": "/app.62b228a09a079af4.hot-update.json"
-    },
-    "app.962d3cde6835fb06.hot-update.js": {
-      "name": "app.962d3cde6835fb06.hot-update.js",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.962d3cde6835fb06.hot-update.js",
-      "publicPath": "/app.962d3cde6835fb06.hot-update.js"
-    },
-    "app.962d3cde6835fb06.hot-update.json": {
-      "name": "app.962d3cde6835fb06.hot-update.json",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.962d3cde6835fb06.hot-update.json",
-      "publicPath": "/app.962d3cde6835fb06.hot-update.json"
-    },
-    "app.d8fc5a33d6e1d0b1.hot-update.js": {
-      "name": "app.d8fc5a33d6e1d0b1.hot-update.js",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.d8fc5a33d6e1d0b1.hot-update.js",
-      "publicPath": "/app.d8fc5a33d6e1d0b1.hot-update.js"
-    },
-    "app.d8fc5a33d6e1d0b1.hot-update.json": {
-      "name": "app.d8fc5a33d6e1d0b1.hot-update.json",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.d8fc5a33d6e1d0b1.hot-update.json",
-      "publicPath": "/app.d8fc5a33d6e1d0b1.hot-update.json"
-    },
-    "app.003ce1471c44d358.hot-update.js": {
-      "name": "app.003ce1471c44d358.hot-update.js",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.003ce1471c44d358.hot-update.js",
-      "publicPath": "/app.003ce1471c44d358.hot-update.js"
-    },
-    "app.003ce1471c44d358.hot-update.json": {
-      "name": "app.003ce1471c44d358.hot-update.json",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.003ce1471c44d358.hot-update.json",
-      "publicPath": "/app.003ce1471c44d358.hot-update.json"
-    },
-    "app.b58de81b676afeb6.hot-update.js": {
-      "name": "app.b58de81b676afeb6.hot-update.js",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.b58de81b676afeb6.hot-update.js",
-      "publicPath": "/app.b58de81b676afeb6.hot-update.js"
-    },
-    "app.b58de81b676afeb6.hot-update.json": {
-      "name": "app.b58de81b676afeb6.hot-update.json",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.b58de81b676afeb6.hot-update.json",
-      "publicPath": "/app.b58de81b676afeb6.hot-update.json"
-    },
-    "app.a5b99f911a6666c0.hot-update.js": {
-      "name": "app.a5b99f911a6666c0.hot-update.js",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.a5b99f911a6666c0.hot-update.js",
-      "publicPath": "/app.a5b99f911a6666c0.hot-update.js"
-    },
-    "app.a5b99f911a6666c0.hot-update.json": {
-      "name": "app.a5b99f911a6666c0.hot-update.json",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.a5b99f911a6666c0.hot-update.json",
-      "publicPath": "/app.a5b99f911a6666c0.hot-update.json"
-    },
-    "app.fc28214d04a3d53f.hot-update.js": {
-      "name": "app.fc28214d04a3d53f.hot-update.js",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.fc28214d04a3d53f.hot-update.js",
-      "publicPath": "/app.fc28214d04a3d53f.hot-update.js"
-    },
-    "app.fc28214d04a3d53f.hot-update.json": {
-      "name": "app.fc28214d04a3d53f.hot-update.json",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.fc28214d04a3d53f.hot-update.json",
-      "publicPath": "/app.fc28214d04a3d53f.hot-update.json"
-    },
-    "app.6c855781a2ceaed8.hot-update.js": {
-      "name": "app.6c855781a2ceaed8.hot-update.js",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.6c855781a2ceaed8.hot-update.js",
-      "publicPath": "/app.6c855781a2ceaed8.hot-update.js"
-    },
-    "app.6c855781a2ceaed8.hot-update.json": {
-      "name": "app.6c855781a2ceaed8.hot-update.json",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.6c855781a2ceaed8.hot-update.json",
-      "publicPath": "/app.6c855781a2ceaed8.hot-update.json"
-    },
-    "app.a93aff8eae3a87cc.hot-update.js": {
-      "name": "app.a93aff8eae3a87cc.hot-update.js",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.a93aff8eae3a87cc.hot-update.js",
-      "publicPath": "/app.a93aff8eae3a87cc.hot-update.js"
-    },
-    "app.a93aff8eae3a87cc.hot-update.json": {
-      "name": "app.a93aff8eae3a87cc.hot-update.json",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.a93aff8eae3a87cc.hot-update.json",
-      "publicPath": "/app.a93aff8eae3a87cc.hot-update.json"
-    },
-    "app.5fe4b9e18ff05909.hot-update.js": {
-      "name": "app.5fe4b9e18ff05909.hot-update.js",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.5fe4b9e18ff05909.hot-update.js",
-      "publicPath": "/app.5fe4b9e18ff05909.hot-update.js"
-    },
-    "app.5fe4b9e18ff05909.hot-update.json": {
-      "name": "app.5fe4b9e18ff05909.hot-update.json",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.5fe4b9e18ff05909.hot-update.json",
-      "publicPath": "/app.5fe4b9e18ff05909.hot-update.json"
-    },
-    "app.3b7a796960f19c9e.hot-update.js": {
-      "name": "app.3b7a796960f19c9e.hot-update.js",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.3b7a796960f19c9e.hot-update.js",
-      "publicPath": "/app.3b7a796960f19c9e.hot-update.js"
-    },
-    "app.3b7a796960f19c9e.hot-update.json": {
-      "name": "app.3b7a796960f19c9e.hot-update.json",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.3b7a796960f19c9e.hot-update.json",
-      "publicPath": "/app.3b7a796960f19c9e.hot-update.json"
-    },
-    "app.1e894b1709714f9d.hot-update.js": {
-      "name": "app.1e894b1709714f9d.hot-update.js",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.1e894b1709714f9d.hot-update.js",
-      "publicPath": "/app.1e894b1709714f9d.hot-update.js"
-    },
-    "app.1e894b1709714f9d.hot-update.json": {
-      "name": "app.1e894b1709714f9d.hot-update.json",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.1e894b1709714f9d.hot-update.json",
-      "publicPath": "/app.1e894b1709714f9d.hot-update.json"
-    },
-    "app.79bb5570dec0bdc6.hot-update.js": {
-      "name": "app.79bb5570dec0bdc6.hot-update.js",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.79bb5570dec0bdc6.hot-update.js",
-      "publicPath": "/app.79bb5570dec0bdc6.hot-update.js"
-    },
-    "app.79bb5570dec0bdc6.hot-update.json": {
-      "name": "app.79bb5570dec0bdc6.hot-update.json",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.79bb5570dec0bdc6.hot-update.json",
-      "publicPath": "/app.79bb5570dec0bdc6.hot-update.json"
-    },
-    "app.22417efb922d66df.hot-update.js": {
-      "name": "app.22417efb922d66df.hot-update.js",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.22417efb922d66df.hot-update.js",
-      "publicPath": "/app.22417efb922d66df.hot-update.js"
-    },
-    "app.22417efb922d66df.hot-update.json": {
-      "name": "app.22417efb922d66df.hot-update.json",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.22417efb922d66df.hot-update.json",
-      "publicPath": "/app.22417efb922d66df.hot-update.json"
-    },
-    "app.d05daddeedcafe9d.hot-update.js": {
-      "name": "app.d05daddeedcafe9d.hot-update.js",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.d05daddeedcafe9d.hot-update.js",
-      "publicPath": "/app.d05daddeedcafe9d.hot-update.js"
-    },
-    "app.d05daddeedcafe9d.hot-update.json": {
-      "name": "app.d05daddeedcafe9d.hot-update.json",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.d05daddeedcafe9d.hot-update.json",
-      "publicPath": "/app.d05daddeedcafe9d.hot-update.json"
-    },
-    "app.cd9a8e39ed113d2c.hot-update.js": {
-      "name": "app.cd9a8e39ed113d2c.hot-update.js",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.cd9a8e39ed113d2c.hot-update.js",
-      "publicPath": "/app.cd9a8e39ed113d2c.hot-update.js"
-    },
-    "app.cd9a8e39ed113d2c.hot-update.json": {
-      "name": "app.cd9a8e39ed113d2c.hot-update.json",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.cd9a8e39ed113d2c.hot-update.json",
-      "publicPath": "/app.cd9a8e39ed113d2c.hot-update.json"
+      "publicPath": "http://0.0.0.0:8080/index.html"
     }
   },
   "chunks": {
     "app": [
-      "js/app.js",
-      "app.cd9a8e39ed113d2c.hot-update.js"
+      "css/app.0a1923e6.css",
+      "js/app.388af494.js"
     ]
   },
-  "publicPath": "/"
+  "publicPath": "http://0.0.0.0:8080/"
 }
