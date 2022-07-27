@@ -4,34 +4,34 @@
     "css/app.0a1923e6.css": {
       "name": "css/app.0a1923e6.css",
       "path": "/Users/delitamakanda/projects/invoices/frontend/dist/css/app.0a1923e6.css",
-      "publicPath": "http://0.0.0.0:8080/css/app.0a1923e6.css"
+      "publicPath": "/static/css/app.0a1923e6.css"
     },
-    "js/app.388af494.js": {
-      "name": "js/app.388af494.js",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/js/app.388af494.js",
-      "publicPath": "http://0.0.0.0:8080/js/app.388af494.js"
+    "js/app.3a119dbe.js": {
+      "name": "js/app.3a119dbe.js",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/js/app.3a119dbe.js",
+      "publicPath": "/static/js/app.3a119dbe.js"
     },
     "favicon.ico": {
       "name": "favicon.ico",
       "path": "/Users/delitamakanda/projects/invoices/frontend/dist/favicon.ico",
-      "publicPath": "http://0.0.0.0:8080/favicon.ico"
+      "publicPath": "/static/favicon.ico"
     },
-    "js/app.388af494.js.map": {
-      "name": "js/app.388af494.js.map",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/js/app.388af494.js.map",
-      "publicPath": "http://0.0.0.0:8080/js/app.388af494.js.map"
+    "js/app.3a119dbe.js.map": {
+      "name": "js/app.3a119dbe.js.map",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/js/app.3a119dbe.js.map",
+      "publicPath": "/static/js/app.3a119dbe.js.map"
     },
     "index.html": {
       "name": "index.html",
       "path": "/Users/delitamakanda/projects/invoices/frontend/dist/index.html",
-      "publicPath": "http://0.0.0.0:8080/index.html"
+      "publicPath": "/static/index.html"
     }
   },
   "chunks": {
     "app": [
       "css/app.0a1923e6.css",
-      "js/app.388af494.js"
+      "js/app.3a119dbe.js"
     ]
   },
-  "publicPath": "http://0.0.0.0:8080/"
+  "publicPath": "/static/"
 }
