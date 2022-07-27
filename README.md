@@ -10,8 +10,3 @@ cms générateur de factures
 ## Frontend
 1. cd frontend
 2. npm run serve
-
-## Deploy to Azure
-```bash
-git push azure main:master
-```
