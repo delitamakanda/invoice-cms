@@ -35,5 +35,5 @@ django-webpack-loader==1.6.0
 psycopg2-binary
 python-dotenv
 whitenoise
-WeasyPrint>=53.3
+WeasyPrint==53.3
 cairocffi==0.9.0
