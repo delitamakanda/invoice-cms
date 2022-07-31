@@ -32,12 +32,14 @@
 <script>
 import { defineComponent, reactive, ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { useStore } from 'vuex'
 import { message } from 'ant-design-vue'
 import axios from 'axios'
 
 export default defineComponent ({
   setup() {
     const router = useRouter()
+    const store = useStore()
     const formRef = ref()
     const formState = reactive({
       username: '',
@@ -87,7 +89,29 @@ export default defineComponent ({
       console.log(values, formState)
       axios.post('/api/v1/users/', { username: formState.username, password: formState.password1})
         .then(response => {
-          router.push('/sign-in')
+          authLogin(formState.username, formState.password1);
+        })
+        .catch(error => {
+          if (error.response) {
+            for(const property in error.response.data) {
+              errorMessage(`${property}: ${error.response.data[property]}`)
+            }
+            console.log(JSON.stringify(error.response.data))
+          } else if (error.message) {
+            console.log(JSON.stringify(error.message))
+          } else {
+            console.log(JSON.stringify(error))
+          }
+        })
+    }
+
+    const authLogin = (username, password) => {
+      axios.post('/api/v1/token/login/', { username: username, password: password})
+        .then(response => {
+          const token = response.data.auth_token
+          store.commit('user/setToken', token)
+          localStorage.setItem('token', token)
+          router.push('/dashboard/my-account')
         })
         .catch(error => {
           if (error.response) {
@@ -121,6 +145,7 @@ export default defineComponent ({
       resetForm,
       errorMessage,
       router,
+      store,
     }
   }
 })

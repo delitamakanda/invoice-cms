@@ -3,7 +3,7 @@ import os
 
 ALLOWED_HOSTS = [os.environ['WEBSITE_HOSTNAME']] if 'WEBSITE_HOSTNAME' in os.environ else []
 CSRF_TRUSTED_ORIGINS = ['https://'+ os.environ['WEBSITE_HOSTNAME']] if 'WEBSITE_HOSTNAME' in os.environ else []
-DEBUG = False
+DEBUG = os.environ['DEBUG']
 
 # WhiteNoise configuration
 MIDDLEWARE = [                                                                   
@@ -55,3 +55,21 @@ DATABASES = {
         'PASSWORD': os.environ['DBPASS'] 
     }
 }
+
+# email 
+DEFAULT_FROM_EMAIL = config('ADMIN_EMAIL')
+SERVER_EMAIL = config('ADMIN_EMAIL')
+
+ADMINS = [
+  (config('ADMIN_NAME'), config('ADMIN_EMAIL')),
+]
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = config('SENDGRID_SERVER')
+EMAIL_PORT = config('SENDGRID_PORT')
+EMAIL_HOST_USER = config('SENDGRID_USERNAME')
+EMAIL_HOST_PASSWORD = config('SENDGRID_PASSWORD')
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+EMAIL_TIMEOUT = 500
+
