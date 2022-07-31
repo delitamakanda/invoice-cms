@@ -1,13 +1,14 @@
-from re import I
+import weasyprint
 import pdfkit
 
 from django.shortcuts import render
+from django.conf import settings
 
 from django.core.exceptions import PermissionDenied
 from django.core.mail import EmailMultiAlternatives
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
-from django.template.loader import get_template
+from django.template.loader import get_template, render_to_string
 
 from rest_framework import viewsets, status, authentication, permissions
 from rest_framework.decorators import api_view, authentication_classes, permission_classes
@@ -48,13 +49,22 @@ def generate_pdf(request, invoice_id):
     invoice = get_object_or_404(
         Invoice, pk=invoice_id, created_by=request.user)
     team = Team.objects.filter(created_by=request.user).first()
-    template = get_template('pdf.html')
-    if invoice.is_credit_for:
-        template = get_template('pdf_creditnote.html')
-    html = template.render({'invoice': invoice, 'team': team})
-    pdf = pdfkit.from_string(html, False, options={})
-    response = HttpResponse(pdf, content_type='application/pdf')
-    response['Content-Disposition'] = 'attachment; filename="invoice.pdf"'
+    if settings.DEBUG:
+        template = get_template('pdf.html')
+        if invoice.is_credit_for:
+            template = get_template('pdf_creditnote.html')
+        html = template.render({'invoice': invoice, 'team': team})
+        pdf = pdfkit.from_string(html, False, options={})
+        response = HttpResponse(pdf, content_type='application/pdf')
+        response['Content-Disposition'] = 'attachment; filename="invoice.pdf"'
+    else:
+        html = render_to_string(
+            'pdf.html', {'invoice': invoice, 'team': team})
+        if invoice.is_credit_for:
+            html = render_to_string('pdf_creditnote.html', {'invoice': invoice, 'team': team})
+        response = HttpResponse(content_type='application/pdf')
+        response['Content-Disposition'] = 'attachment; filename="invoice_{}.pdf"'.format(invoice.invoice_number)
+        weasyprint.HTML(string=html).write_pdf(response)
 
     return response
 
@@ -82,9 +92,15 @@ def send_reminder(request, invoice_id):
         to
     )
     message.attach_alternative(html_content, 'text/html')
-    template = get_template('pdf.html')
-    html = template.render({'invoice': invoice, 'team': team})
-    pdf = pdfkit.from_string(html, False, options={})
+    if settings.DEBUG:
+        template = get_template('pdf.html')
+        html = template.render({'invoice': invoice, 'team': team})
+        pdf = pdfkit.from_string(html, False, options={})
+    else:
+        html = render_to_string(
+            'pdf.html', {'invoice': invoice, 'team': team})
+        response = HttpResponse(content_type='application/pdf')
+        pdf = weasyprint.HTML(string=html).write_pdf(response)
 
     if pdf:
         name = 'invoice_%s.pdf' % invoice.invoice_number
