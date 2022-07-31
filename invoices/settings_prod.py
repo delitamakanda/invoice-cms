@@ -57,18 +57,18 @@ DATABASES = {
 }
 
 # email 
-DEFAULT_FROM_EMAIL = config('ADMIN_EMAIL')
-SERVER_EMAIL = config('ADMIN_EMAIL')
+DEFAULT_FROM_EMAIL = os.environ['ADMIN_EMAIL']
+SERVER_EMAIL = os.environ['ADMIN_EMAIL']
 
 ADMINS = [
-  (config('ADMIN_NAME'), config('ADMIN_EMAIL')),
+  (os.environ['ADMIN_NAME'], os.environ['ADMIN_EMAIL']),
 ]
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = config('SENDGRID_SERVER')
-EMAIL_PORT = config('SENDGRID_PORT')
-EMAIL_HOST_USER = config('SENDGRID_USERNAME')
-EMAIL_HOST_PASSWORD = config('SENDGRID_PASSWORD')
+EMAIL_HOST = os.environ['SENDGRID_SERVER']
+EMAIL_PORT = os.environ['SENDGRID_PORT']
+EMAIL_HOST_USER = os.environ['SENDGRID_USERNAME']
+EMAIL_HOST_PASSWORD = os.environ['SENDGRID_PASSWORD']
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_TIMEOUT = 500
