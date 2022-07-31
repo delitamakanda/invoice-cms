@@ -4,7 +4,7 @@ import { endpoint } from './constants'
 
 export const authAxios = axios.create({
     baseURL: endpoint,
-    timeout: 1000
+    timeout: 5000
 })
 
 
