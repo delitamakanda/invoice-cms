@@ -1,5 +1,5 @@
 # Invoices
-[![Build and deploy Python app to Azure Web App - invoices-cms](https://github.com/delitamakanda/invoice-cms/actions/workflows/main_invoices-cms.yml/badge.svg?branch=main&event=push)](https://github.com/delitamakanda/invoice-cms/actions/workflows/main_invoices-cms.yml)
+[![invoices-cms](https://github.com/delitamakanda/invoice-cms/actions/workflows/main_invoices-cms.yml/badge.svg?branch=main&event=push)](https://github.com/delitamakanda/invoice-cms/actions/workflows/main_invoices-cms.yml)
 
 cms générateur de factures
 
