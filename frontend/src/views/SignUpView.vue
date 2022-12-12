@@ -15,7 +15,7 @@
       <a-input v-model:value="formState.username" />
     </a-form-item>
     <a-form-item ref="password1" has-feedback label="Password" name="password1">
-      <a-input v-model:value="formState.password1" type="password" autocomplete="off" />
+      <a-input-password v-model:value="formState.password1" />
     </a-form-item>
     <a-form-item ref="password2" has-feedback label="Confirm" name="password2">
       <a-input v-model:value="formState.password2" type="password" autocomplete="off" />
@@ -73,7 +73,7 @@ export default defineComponent ({
         { min: 1, max: 255, message: 'Length should be 3 to 5', trigger: 'blur' }
       ],
       password1: [{ required: true, validator: validatePass, trigger: 'change' }],
-      password2: [{ validator: validatePass2, trigger: 'change' }],
+      password2: [{ required: true, validator: validatePass2, trigger: 'change' }],
     }
 
     const layout = {
@@ -111,7 +111,7 @@ export default defineComponent ({
           const token = response.data.auth_token
           store.commit('user/setToken', token)
           localStorage.setItem('token', token)
-          router.push('/dashboard/my-account')
+          router.push('/')
         })
         .catch(error => {
           if (error.response) {

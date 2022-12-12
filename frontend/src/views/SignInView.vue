@@ -3,32 +3,40 @@
     <h1>Sign in</h1>
 
     <a-form
-    layout="inline"
-    :model="formState"
-    @finish="handleFinish"
-    @finishFailed="handleFinishFailed"
-  >
-    <a-form-item>
-      <a-input v-model:value="formState.username" type="email" placeholder="E-mail">
-        <template #prefix><UserOutlined style="color: rgba(0, 0, 0, 0.25)" /></template>
-      </a-input>
-    </a-form-item>
-    <a-form-item>
-      <a-input v-model:value="formState.password" type="password" placeholder="Password" autocomplete="off">
-        <template #prefix><LockOutlined style="color: rgba(0, 0, 0, 0.25)" /></template>
-      </a-input>
-    </a-form-item>
-    <a-form-item>
-      <a-button
-        type="primary"
-        html-type="submit"
-        :disabled="formState.user === '' || formState.password === ''"
+      :model="formState"
+      name="basic"
+      :label-col="{ span: 8 }"
+      :wrapper-col="{ span: 16 }"
+      autocomplete="off"
+      @finish="handleFinish"
+      @finishFailed="handleFinishFailed"
+    >
+      <a-form-item
+        label="E-mail address"
+        name="username"
+        :rules="[{ required: true, message: 'Email is required' }]"
       >
-        Log in
-      </a-button>
-    </a-form-item>
-  </a-form>
-  <router-link to="/sign-up">Sign up</router-link>
+        <a-input v-model:value="formState.username" />
+      </a-form-item>
+
+      <a-form-item
+        label="Password"
+        name="password"
+        :rules="[{ required: true, message: 'Password is required' }]"
+      >
+        <a-input-password v-model:value="formState.password" />
+      </a-form-item>
+
+      <a-form-item name="remember" :wrapper-col="{ offset: 8, span: 16 }">
+        <a-checkbox v-model:checked="formState.remember">Remember me</a-checkbox>
+      </a-form-item>
+
+      <a-form-item :wrapper-col="{ offset: 8, span: 16 }">
+        <a-button type="primary" html-type="submit">Login</a-button>
+      </a-form-item>
+      Or
+      <router-link to="/sign-up">Register now!</router-link>
+    </a-form>
   </div>
 </template>
 
@@ -46,7 +54,8 @@ export default defineComponent ({
     const store = useStore()
     const formState = reactive({
       username: '',
-      password: ''
+      password: '',
+      remember: true,
     })
 
     const errorMessage = (verb) => {
@@ -60,7 +69,7 @@ export default defineComponent ({
           const token = response.data.auth_token
           store.commit('user/setToken', token)
           localStorage.setItem('token', token)
-          router.push('/dashboard/my-account')
+          router.push('/')
         })
         .catch(error => {
           if (error.response) {
