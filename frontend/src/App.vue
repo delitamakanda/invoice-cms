@@ -17,24 +17,36 @@
             <video-camera-outlined />
             <span class="nav-text"><router-link to="/">Home</router-link></span>
           </a-menu-item>
-          <a-menu-item key="2">
-            <video-camera-outlined />
-            <span class="nav-text"><router-link to="/dashboard/clients">Clients</router-link></span>
-          </a-menu-item>
-          <a-menu-item key="3">
-            <upload-outlined />
-            <span class="nav-text"><router-link to="/dashboard/invoices">Invoices</router-link></span>
-          </a-menu-item>
-          <a-sub-menu key="sub2" title="My account">
+          <a-sub-menu key="sub3" title="Clients">
+            <a-menu-item key="2">
+              <bar-chart-outlined />
+              <span class="nav-text"><router-link to="/dashboard/clients">Clients</router-link></span>
+            </a-menu-item>
+            <a-menu-item key="3">
+              <usergroup-add-outlined />
+              <span class="nav-text"><router-link to="/dashboard/clients/add">Add client</router-link></span>
+            </a-menu-item>
+        </a-sub-menu>
+        <a-sub-menu key="sub4" title="Invoices">
             <a-menu-item key="4">
+              <bar-chart-outlined />
+              <span class="nav-text"><router-link to="/dashboard/invoices">Invoices</router-link></span>
+            </a-menu-item>
+            <a-menu-item key="5">
+              <upload-outlined />
+              <span class="nav-text"><router-link to="/dashboard/invoices/add">Add invoice</router-link></span>
+            </a-menu-item>
+          </a-sub-menu>
+          <a-sub-menu key="sub2" title="My account">
+            <a-menu-item key="6">
               <user-outlined />
               <span class="nav-text"><router-link to="/dashboard/my-account">User info</router-link></span>
             </a-menu-item>
-            <a-menu-item key="5">
+            <a-menu-item key="7">
               <bar-chart-outlined />
               <span class="nav-text"><router-link to="/dashboard/my-account/edit-team">Edit team</router-link></span>
             </a-menu-item>
-            <a-menu-item key="6">
+            <a-menu-item key="8">
               <logout-outlined />
               <span class="nav-text" @click="logout()">Logout</span>
             </a-menu-item>
@@ -50,7 +62,8 @@
             <span class="nav-text"><router-link to="/sign-in">Log in</router-link></span>
           </a-menu-item>
         </template>
-        <a-menu-item :key="store.state['user'].isLoggedIn ? '7' : '3'">
+        <a-menu-item :key="store.state['user'].isLoggedIn ? '9' : '3'">
+          <tool-outlined />
           <span class="nav-text"><router-link to="/about">About</router-link></span>
         </a-menu-item>
       </a-menu>
@@ -75,7 +88,7 @@
   import { title } from './utils/constants'
   import { useStore } from 'vuex'
   import { useRouter } from 'vue-router'
-  import { UserOutlined, VideoCameraOutlined, UploadOutlined, BarChartOutlined, CloudOutlined, AppstoreOutlined, TeamOutlined, ShopOutlined, HomeOutlined, LoginOutlined, LogoutOutlined, UserAddOutlined } from '@ant-design/icons-vue'
+  import { UserOutlined, VideoCameraOutlined, UploadOutlined, BarChartOutlined, CloudOutlined, AppstoreOutlined, TeamOutlined, ShopOutlined, HomeOutlined, LoginOutlined, LogoutOutlined, UserAddOutlined, UsergroupAddOutlined, ToolOutlined } from '@ant-design/icons-vue'
 
   export default defineComponent({
     components: {
@@ -90,7 +103,9 @@
       HomeOutlined,
       LoginOutlined,
       LogoutOutlined,
-      UserAddOutlined
+      UserAddOutlined,
+      UsergroupAddOutlined,
+      ToolOutlined,
     },
     setup() {
       const store = useStore()
@@ -101,7 +116,7 @@
       const state = reactive({
         mode: 'inline',
         theme: 'light',
-        selectedKeys: ['1'],
+        selectedKeys: ['2'],
         openKeys: ['sub1'],
         collapsed: false,
       })

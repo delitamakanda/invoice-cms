@@ -1,25 +1,25 @@
 {
   "status": "done",
   "assets": {
-    "css/app.80086b19.css": {
-      "name": "css/app.80086b19.css",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/css/app.80086b19.css",
-      "publicPath": "/static/css/app.80086b19.css"
+    "css/app.a473296f.css": {
+      "name": "css/app.a473296f.css",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/css/app.a473296f.css",
+      "publicPath": "/static/css/app.a473296f.css"
     },
-    "js/app.962b5963.js": {
-      "name": "js/app.962b5963.js",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/js/app.962b5963.js",
-      "publicPath": "/static/js/app.962b5963.js"
+    "js/app.3538d6e3.js": {
+      "name": "js/app.3538d6e3.js",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/js/app.3538d6e3.js",
+      "publicPath": "/static/js/app.3538d6e3.js"
     },
     "favicon.ico": {
       "name": "favicon.ico",
       "path": "/Users/delitamakanda/projects/invoices/frontend/dist/favicon.ico",
       "publicPath": "/static/favicon.ico"
     },
-    "js/app.962b5963.js.map": {
-      "name": "js/app.962b5963.js.map",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/js/app.962b5963.js.map",
-      "publicPath": "/static/js/app.962b5963.js.map"
+    "js/app.3538d6e3.js.map": {
+      "name": "js/app.3538d6e3.js.map",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/js/app.3538d6e3.js.map",
+      "publicPath": "/static/js/app.3538d6e3.js.map"
     },
     "index.html": {
       "name": "index.html",
@@ -29,8 +29,8 @@
   },
   "chunks": {
     "app": [
-      "css/app.80086b19.css",
-      "js/app.962b5963.js"
+      "css/app.a473296f.css",
+      "js/app.3538d6e3.js"
     ]
   },
   "publicPath": "/static/"
