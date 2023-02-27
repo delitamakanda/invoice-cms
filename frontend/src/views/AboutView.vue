@@ -1,20 +1,21 @@
 <template>
       <div class="page-about">
-            <h1>About Invoices CMS</h1>
+            <a-row>
+                  <a-col :span="12">
+                        <img :src="require('../assets/images/illustration-woman-online-desktop.svg')" alt="Illustration" :style="{ margin: '15% 0 0 -5%'}" />
+                        <img :src="require('../assets/images/illustration-box-desktop.svg')" alt="Illustration 2" :style="{ margin: '20% 0 0 -539px '}" />
+                  </a-col>
+                  <a-col :span="12">
+                        <a-typography-title class="page-about-title">FAQ</a-typography-title>
+                        <a-collapse v-model:activeKey="activeKey" expandIconPosition="right" :bordered="false" :style="{background: '#fff'}" accordion>
+                              <a-collapse-panel :key="t.id" v-for="(t) in text" :header="t.title">
+                                    <p>{{ t.text }}</p>
+                              </a-collapse-panel>
+                        </a-collapse>
+                  </a-col>
+            </a-row>
 
-            <p>Hosted by Azure App Service / Azure Flexible SQL server</p>
 
-            <a-collapse v-model:activeKey="activeKey" accordion>
-                  <a-collapse-panel key="1" header="This is panel header 1">
-                        <p>{{ text }}</p>
-                  </a-collapse-panel>
-                  <a-collapse-panel key="2" header="This is panel header 2" :disabled="false">
-                        <p>{{ text }}</p>
-                  </a-collapse-panel>
-                  <a-collapse-panel key="3" header="How">
-                        <p>{{ text }}</p>
-                  </a-collapse-panel>
-            </a-collapse>
       </div>
 </template>
 
@@ -23,13 +24,58 @@ import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
   setup() {
-      const activeKey = ref([])
-      const text = ref('This is panel header 1')
+      const activeKey = ref(['1'])
+      const text = ref([
+            {
+                  id: 1,
+                  text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidid',
+                  title: 'How many team members can I invite?',
+            },
+            {
+                  id: 2,
+                  text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidid',
+                  title: 'What is the maximum file upload size?',
+            },
+            {
+                  id: 3,
+                  text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidid',
+                  title: 'How do I reset my password?',
+            },
+            {
+                  id: 4,
+                  text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidid',
+                  title: 'Can I cancel my subscription?',
+            },
+            {
+                  id: 5,
+                  text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidid.',
+                  title: 'Do you provide additional support?',
+            }
+      ])
+      const customStyle =
+      'background: #fff;';
 
       return {
         activeKey,
-        text
+        text,
+        customStyle
       }
   }
 });
 </script>
+
+<style lang="scss">
+.page-about-title {
+      font-family: var(--primary-font-bold);
+}
+
+.ant-collapse-item-active .ant-collapse-header {
+      font-family: var(--primary-font-bold);
+}
+
+@media screen and (max-width: 375px) {
+      .page-about img {
+            display: none;
+      }
+}
+</style>

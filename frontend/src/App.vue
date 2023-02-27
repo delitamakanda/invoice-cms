@@ -68,7 +68,7 @@
         </a-menu-item>
       </a-menu>
     </a-layout-sider>
-    <a-layout :style="{ marginLeft: '200px' }">
+    <a-layout :style="{ marginLeft: '200px', height: '100%', width: '100%' }">
       <a-layout-header :style="{ background: '#fff', padding: 0 }" />
       <a-layout-content :style="{ margin: '24px 16px 0', overflow: 'initial' }">
         <div :style="{ padding: '24px', background: '#fff', minHeight: '280px' }">
@@ -146,6 +146,39 @@
 </script>
 
 <style lang="scss">
+@import '~@/fonts.scss';
+
+:root {
+  --primary-color: #1890ff;
+  --primary-color-dark: #1890ff;
+  --primary-color-light: #f5f5f5;
+  --primary-color-lighter: #f5f5f5;
+  --primary-color-lightest: #f5f5f5;
+  --primary-color-darker: #212121;
+  --primary-color-darkest: #212121;
+
+  --secondary-color: #f5f5f5;
+  --secondary-color-dark: #212121;
+  --secondary-color-light: #f5f5f5;
+  --secondary-color-lighter: #f5f5f5;
+  --secondary-color-lightest: #f5f5f5;
+  --secondary-color-darker: #212121;
+  --secondary-color-darkest: #212121;
+
+  --primary-font-regular: 'Kumbh Sans Regular';
+  --primary-font-medium: 'Kumbh Sans Medium';
+  --primary-font-bold: 'Kumbh Sans Bold';
+  --primary-font-light: 'Kumbh Sans Light';
+  --primary-font-black: 'Kumbh Sans Black';
+}
+
+body {
+  font-family: var(--primary-font-regular);
+  font-size: 16px;
+  color: var(--primary-color);
+  line-height: 20px;
+}
+
 #components-layout-demo-fixed-sider .logo {
   height: 32px;
   background: rgba(0, 0, 0, 0.2);

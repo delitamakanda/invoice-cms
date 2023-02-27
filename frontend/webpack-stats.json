@@ -1,25 +1,80 @@
 {
   "status": "done",
   "assets": {
-    "css/app.a473296f.css": {
-      "name": "css/app.a473296f.css",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/css/app.a473296f.css",
-      "publicPath": "/static/css/app.a473296f.css"
+    "fonts/KumbhSans-Black.efcd666f.ttf": {
+      "name": "fonts/KumbhSans-Black.efcd666f.ttf",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-Black.efcd666f.ttf",
+      "publicPath": "/static/fonts/KumbhSans-Black.efcd666f.ttf"
     },
-    "js/app.3538d6e3.js": {
-      "name": "js/app.3538d6e3.js",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/js/app.3538d6e3.js",
-      "publicPath": "/static/js/app.3538d6e3.js"
+    "fonts/KumbhSans-Bold.22fec197.ttf": {
+      "name": "fonts/KumbhSans-Bold.22fec197.ttf",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-Bold.22fec197.ttf",
+      "publicPath": "/static/fonts/KumbhSans-Bold.22fec197.ttf"
+    },
+    "fonts/KumbhSans-ExtraBold.66b0d62c.ttf": {
+      "name": "fonts/KumbhSans-ExtraBold.66b0d62c.ttf",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-ExtraBold.66b0d62c.ttf",
+      "publicPath": "/static/fonts/KumbhSans-ExtraBold.66b0d62c.ttf"
+    },
+    "fonts/KumbhSans-ExtraLight.36b78c35.ttf": {
+      "name": "fonts/KumbhSans-ExtraLight.36b78c35.ttf",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-ExtraLight.36b78c35.ttf",
+      "publicPath": "/static/fonts/KumbhSans-ExtraLight.36b78c35.ttf"
+    },
+    "fonts/KumbhSans-Light.b23c7556.ttf": {
+      "name": "fonts/KumbhSans-Light.b23c7556.ttf",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-Light.b23c7556.ttf",
+      "publicPath": "/static/fonts/KumbhSans-Light.b23c7556.ttf"
+    },
+    "fonts/KumbhSans-Medium.e8a960b0.ttf": {
+      "name": "fonts/KumbhSans-Medium.e8a960b0.ttf",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-Medium.e8a960b0.ttf",
+      "publicPath": "/static/fonts/KumbhSans-Medium.e8a960b0.ttf"
+    },
+    "fonts/KumbhSans-Regular.85ff22d4.ttf": {
+      "name": "fonts/KumbhSans-Regular.85ff22d4.ttf",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-Regular.85ff22d4.ttf",
+      "publicPath": "/static/fonts/KumbhSans-Regular.85ff22d4.ttf"
+    },
+    "fonts/KumbhSans-SemiBold.11611cce.ttf": {
+      "name": "fonts/KumbhSans-SemiBold.11611cce.ttf",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-SemiBold.11611cce.ttf",
+      "publicPath": "/static/fonts/KumbhSans-SemiBold.11611cce.ttf"
+    },
+    "fonts/KumbhSans-Thin.66bc02e7.ttf": {
+      "name": "fonts/KumbhSans-Thin.66bc02e7.ttf",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-Thin.66bc02e7.ttf",
+      "publicPath": "/static/fonts/KumbhSans-Thin.66bc02e7.ttf"
+    },
+    "css/app.8aabaedc.css": {
+      "name": "css/app.8aabaedc.css",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/css/app.8aabaedc.css",
+      "publicPath": "/static/css/app.8aabaedc.css"
+    },
+    "js/app.60ac43d7.js": {
+      "name": "js/app.60ac43d7.js",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/js/app.60ac43d7.js",
+      "publicPath": "/static/js/app.60ac43d7.js"
+    },
+    "img/illustration-box-desktop.aec62988.svg": {
+      "name": "img/illustration-box-desktop.aec62988.svg",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/img/illustration-box-desktop.aec62988.svg",
+      "publicPath": "/static/img/illustration-box-desktop.aec62988.svg"
+    },
+    "img/illustration-woman-online-desktop.e99d2ea3.svg": {
+      "name": "img/illustration-woman-online-desktop.e99d2ea3.svg",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/img/illustration-woman-online-desktop.e99d2ea3.svg",
+      "publicPath": "/static/img/illustration-woman-online-desktop.e99d2ea3.svg"
     },
     "favicon.ico": {
       "name": "favicon.ico",
       "path": "/Users/delitamakanda/projects/invoices/frontend/dist/favicon.ico",
       "publicPath": "/static/favicon.ico"
     },
-    "js/app.3538d6e3.js.map": {
-      "name": "js/app.3538d6e3.js.map",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/js/app.3538d6e3.js.map",
-      "publicPath": "/static/js/app.3538d6e3.js.map"
+    "js/app.60ac43d7.js.map": {
+      "name": "js/app.60ac43d7.js.map",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/js/app.60ac43d7.js.map",
+      "publicPath": "/static/js/app.60ac43d7.js.map"
     },
     "index.html": {
       "name": "index.html",
@@ -29,8 +84,8 @@
   },
   "chunks": {
     "app": [
-      "css/app.a473296f.css",
-      "js/app.3538d6e3.js"
+      "css/app.8aabaedc.css",
+      "js/app.60ac43d7.js"
     ]
   },
   "publicPath": "/static/"
