@@ -5,10 +5,11 @@ import store from './store'
 import axios from 'axios'
 import Antd from 'ant-design-vue'
 import filters from './helpers/filters'
+import { i18n } from './i18n/lang'
 import 'ant-design-vue/dist/antd.css'
 
 axios.defaults.baseURL = '/'
 
 const app = createApp(App)
 app.config.globalProperties.$filters = filters
-app.use(Antd).use(store).use(router, axios).mount('#app')
+app.use(i18n).app.use(Antd).use(store).use(router, axios).mount('#app')

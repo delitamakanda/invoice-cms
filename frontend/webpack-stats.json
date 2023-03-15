@@ -1,92 +1,134 @@
 {
   "status": "done",
   "assets": {
-    "fonts/KumbhSans-Black.efcd666f.ttf": {
-      "name": "fonts/KumbhSans-Black.efcd666f.ttf",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-Black.efcd666f.ttf",
-      "publicPath": "/static/fonts/KumbhSans-Black.efcd666f.ttf"
-    },
-    "fonts/KumbhSans-Bold.22fec197.ttf": {
-      "name": "fonts/KumbhSans-Bold.22fec197.ttf",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-Bold.22fec197.ttf",
-      "publicPath": "/static/fonts/KumbhSans-Bold.22fec197.ttf"
-    },
-    "fonts/KumbhSans-ExtraBold.66b0d62c.ttf": {
-      "name": "fonts/KumbhSans-ExtraBold.66b0d62c.ttf",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-ExtraBold.66b0d62c.ttf",
-      "publicPath": "/static/fonts/KumbhSans-ExtraBold.66b0d62c.ttf"
-    },
-    "fonts/KumbhSans-ExtraLight.36b78c35.ttf": {
-      "name": "fonts/KumbhSans-ExtraLight.36b78c35.ttf",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-ExtraLight.36b78c35.ttf",
-      "publicPath": "/static/fonts/KumbhSans-ExtraLight.36b78c35.ttf"
-    },
-    "fonts/KumbhSans-Light.b23c7556.ttf": {
-      "name": "fonts/KumbhSans-Light.b23c7556.ttf",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-Light.b23c7556.ttf",
-      "publicPath": "/static/fonts/KumbhSans-Light.b23c7556.ttf"
-    },
-    "fonts/KumbhSans-Medium.e8a960b0.ttf": {
-      "name": "fonts/KumbhSans-Medium.e8a960b0.ttf",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-Medium.e8a960b0.ttf",
-      "publicPath": "/static/fonts/KumbhSans-Medium.e8a960b0.ttf"
-    },
-    "fonts/KumbhSans-Regular.85ff22d4.ttf": {
-      "name": "fonts/KumbhSans-Regular.85ff22d4.ttf",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-Regular.85ff22d4.ttf",
-      "publicPath": "/static/fonts/KumbhSans-Regular.85ff22d4.ttf"
-    },
-    "fonts/KumbhSans-SemiBold.11611cce.ttf": {
-      "name": "fonts/KumbhSans-SemiBold.11611cce.ttf",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-SemiBold.11611cce.ttf",
-      "publicPath": "/static/fonts/KumbhSans-SemiBold.11611cce.ttf"
-    },
-    "fonts/KumbhSans-Thin.66bc02e7.ttf": {
-      "name": "fonts/KumbhSans-Thin.66bc02e7.ttf",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-Thin.66bc02e7.ttf",
-      "publicPath": "/static/fonts/KumbhSans-Thin.66bc02e7.ttf"
-    },
-    "css/app.8aabaedc.css": {
-      "name": "css/app.8aabaedc.css",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/css/app.8aabaedc.css",
-      "publicPath": "/static/css/app.8aabaedc.css"
-    },
-    "js/app.60ac43d7.js": {
-      "name": "js/app.60ac43d7.js",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/js/app.60ac43d7.js",
-      "publicPath": "/static/js/app.60ac43d7.js"
+    "js/app.js": {
+      "name": "js/app.js",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/js/app.js",
+      "publicPath": "http://0.0.0.0:8080/js/app.js"
     },
     "img/illustration-box-desktop.aec62988.svg": {
       "name": "img/illustration-box-desktop.aec62988.svg",
       "path": "/Users/delitamakanda/projects/invoices/frontend/dist/img/illustration-box-desktop.aec62988.svg",
-      "publicPath": "/static/img/illustration-box-desktop.aec62988.svg"
+      "publicPath": "http://0.0.0.0:8080/img/illustration-box-desktop.aec62988.svg"
     },
     "img/illustration-woman-online-desktop.e99d2ea3.svg": {
       "name": "img/illustration-woman-online-desktop.e99d2ea3.svg",
       "path": "/Users/delitamakanda/projects/invoices/frontend/dist/img/illustration-woman-online-desktop.e99d2ea3.svg",
-      "publicPath": "/static/img/illustration-woman-online-desktop.e99d2ea3.svg"
+      "publicPath": "http://0.0.0.0:8080/img/illustration-woman-online-desktop.e99d2ea3.svg"
+    },
+    "fonts/KumbhSans-Black.efcd666f.ttf": {
+      "name": "fonts/KumbhSans-Black.efcd666f.ttf",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-Black.efcd666f.ttf",
+      "publicPath": "http://0.0.0.0:8080/fonts/KumbhSans-Black.efcd666f.ttf"
+    },
+    "fonts/KumbhSans-Bold.22fec197.ttf": {
+      "name": "fonts/KumbhSans-Bold.22fec197.ttf",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-Bold.22fec197.ttf",
+      "publicPath": "http://0.0.0.0:8080/fonts/KumbhSans-Bold.22fec197.ttf"
+    },
+    "fonts/KumbhSans-ExtraBold.66b0d62c.ttf": {
+      "name": "fonts/KumbhSans-ExtraBold.66b0d62c.ttf",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-ExtraBold.66b0d62c.ttf",
+      "publicPath": "http://0.0.0.0:8080/fonts/KumbhSans-ExtraBold.66b0d62c.ttf"
+    },
+    "fonts/KumbhSans-ExtraLight.36b78c35.ttf": {
+      "name": "fonts/KumbhSans-ExtraLight.36b78c35.ttf",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-ExtraLight.36b78c35.ttf",
+      "publicPath": "http://0.0.0.0:8080/fonts/KumbhSans-ExtraLight.36b78c35.ttf"
+    },
+    "fonts/KumbhSans-Light.b23c7556.ttf": {
+      "name": "fonts/KumbhSans-Light.b23c7556.ttf",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-Light.b23c7556.ttf",
+      "publicPath": "http://0.0.0.0:8080/fonts/KumbhSans-Light.b23c7556.ttf"
+    },
+    "fonts/KumbhSans-Medium.e8a960b0.ttf": {
+      "name": "fonts/KumbhSans-Medium.e8a960b0.ttf",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-Medium.e8a960b0.ttf",
+      "publicPath": "http://0.0.0.0:8080/fonts/KumbhSans-Medium.e8a960b0.ttf"
+    },
+    "fonts/KumbhSans-Regular.85ff22d4.ttf": {
+      "name": "fonts/KumbhSans-Regular.85ff22d4.ttf",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-Regular.85ff22d4.ttf",
+      "publicPath": "http://0.0.0.0:8080/fonts/KumbhSans-Regular.85ff22d4.ttf"
+    },
+    "fonts/KumbhSans-SemiBold.11611cce.ttf": {
+      "name": "fonts/KumbhSans-SemiBold.11611cce.ttf",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-SemiBold.11611cce.ttf",
+      "publicPath": "http://0.0.0.0:8080/fonts/KumbhSans-SemiBold.11611cce.ttf"
+    },
+    "fonts/KumbhSans-Thin.66bc02e7.ttf": {
+      "name": "fonts/KumbhSans-Thin.66bc02e7.ttf",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-Thin.66bc02e7.ttf",
+      "publicPath": "http://0.0.0.0:8080/fonts/KumbhSans-Thin.66bc02e7.ttf"
     },
     "favicon.ico": {
       "name": "favicon.ico",
       "path": "/Users/delitamakanda/projects/invoices/frontend/dist/favicon.ico",
-      "publicPath": "/static/favicon.ico"
-    },
-    "js/app.60ac43d7.js.map": {
-      "name": "js/app.60ac43d7.js.map",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/js/app.60ac43d7.js.map",
-      "publicPath": "/static/js/app.60ac43d7.js.map"
+      "publicPath": "http://0.0.0.0:8080/favicon.ico"
     },
     "index.html": {
       "name": "index.html",
       "path": "/Users/delitamakanda/projects/invoices/frontend/dist/index.html",
-      "publicPath": "/static/index.html"
+      "publicPath": "http://0.0.0.0:8080/index.html"
+    },
+    "app.6c256512b3fc284a.hot-update.js": {
+      "name": "app.6c256512b3fc284a.hot-update.js",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.6c256512b3fc284a.hot-update.js",
+      "publicPath": "http://0.0.0.0:8080/app.6c256512b3fc284a.hot-update.js"
+    },
+    "app.6c256512b3fc284a.hot-update.json": {
+      "name": "app.6c256512b3fc284a.hot-update.json",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.6c256512b3fc284a.hot-update.json",
+      "publicPath": "http://0.0.0.0:8080/app.6c256512b3fc284a.hot-update.json"
+    },
+    "app.7316fde4096c72ec.hot-update.js": {
+      "name": "app.7316fde4096c72ec.hot-update.js",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.7316fde4096c72ec.hot-update.js",
+      "publicPath": "http://0.0.0.0:8080/app.7316fde4096c72ec.hot-update.js"
+    },
+    "app.7316fde4096c72ec.hot-update.json": {
+      "name": "app.7316fde4096c72ec.hot-update.json",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.7316fde4096c72ec.hot-update.json",
+      "publicPath": "http://0.0.0.0:8080/app.7316fde4096c72ec.hot-update.json"
+    },
+    "app.8308c5f4fc12c75a.hot-update.js": {
+      "name": "app.8308c5f4fc12c75a.hot-update.js",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.8308c5f4fc12c75a.hot-update.js",
+      "publicPath": "http://0.0.0.0:8080/app.8308c5f4fc12c75a.hot-update.js"
+    },
+    "app.8308c5f4fc12c75a.hot-update.json": {
+      "name": "app.8308c5f4fc12c75a.hot-update.json",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.8308c5f4fc12c75a.hot-update.json",
+      "publicPath": "http://0.0.0.0:8080/app.8308c5f4fc12c75a.hot-update.json"
+    },
+    "app.e83b5a8c14108cac.hot-update.js": {
+      "name": "app.e83b5a8c14108cac.hot-update.js",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.e83b5a8c14108cac.hot-update.js",
+      "publicPath": "http://0.0.0.0:8080/app.e83b5a8c14108cac.hot-update.js"
+    },
+    "app.e83b5a8c14108cac.hot-update.json": {
+      "name": "app.e83b5a8c14108cac.hot-update.json",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.e83b5a8c14108cac.hot-update.json",
+      "publicPath": "http://0.0.0.0:8080/app.e83b5a8c14108cac.hot-update.json"
+    },
+    "app.36ee9e81fc87fe55.hot-update.js": {
+      "name": "app.36ee9e81fc87fe55.hot-update.js",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.36ee9e81fc87fe55.hot-update.js",
+      "publicPath": "http://0.0.0.0:8080/app.36ee9e81fc87fe55.hot-update.js"
+    },
+    "app.36ee9e81fc87fe55.hot-update.json": {
+      "name": "app.36ee9e81fc87fe55.hot-update.json",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/app.36ee9e81fc87fe55.hot-update.json",
+      "publicPath": "http://0.0.0.0:8080/app.36ee9e81fc87fe55.hot-update.json"
     }
   },
   "chunks": {
     "app": [
-      "css/app.8aabaedc.css",
-      "js/app.60ac43d7.js"
+      "js/app.js",
+      "app.36ee9e81fc87fe55.hot-update.js"
     ]
   },
-  "publicPath": "/static/"
+  "publicPath": "http://0.0.0.0:8080/",
+  "error": "ModuleBuildError",
+  "message": "Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/delitamakanda/projects/invoices/frontend/src/main.js: Unexpected token, expected \"{\" (9:0)\n\n   7 | import filters from './helpers/filters'\n   8 | import\n>  9 | import 'ant-design-vue/dist/antd.css'\n     | ^\n  10 |\n  11 | axios.defaults.baseURL = '/'\n  12 |\n    at instantiate (/Users/delitamakanda/projects/invoices/frontend/node_modules/@babel/parser/lib/index.js:72:32)\n    at constructor (/Users/delitamakanda/projects/invoices/frontend/node_modules/@babel/parser/lib/index.js:359:12)\n    at Parser.raise (/Users/delitamakanda/projects/invoices/frontend/node_modules/@babel/parser/lib/index.js:3339:19)\n    at Parser.unexpected (/Users/delitamakanda/projects/invoices/frontend/node_modules/@babel/parser/lib/index.js:3377:16)\n    at Parser.expect (/Users/delitamakanda/projects/invoices/frontend/node_modules/@babel/parser/lib/index.js:4006:28)\n    at Parser.parseNamedImportSpecifiers (/Users/delitamakanda/projects/invoices/frontend/node_modules/@babel/parser/lib/index.js:16480:10)\n    at Parser.parseImport (/Users/delitamakanda/projects/invoices/frontend/node_modules/@babel/parser/lib/index.js:16309:39)\n    at Parser.parseStatementContent (/Users/delitamakanda/projects/invoices/frontend/node_modules/@babel/parser/lib/index.js:14753:27)\n    at Parser.parseStatement (/Users/delitamakanda/projects/invoices/frontend/node_modules/@babel/parser/lib/index.js:14643:17)\n    at Parser.parseBlockOrModuleBlockBody (/Users/delitamakanda/projects/invoices/frontend/node_modules/@babel/parser/lib/index.js:15286:25)"
 }
