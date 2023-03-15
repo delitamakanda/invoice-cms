@@ -1,6 +1,7 @@
 <template>
   <div class="page-signup">
-    <h1>Sign up</h1>
+    <a-typography-title class="page-about-title">{{ $t("signupPage.title") }}</a-typography-title>
+    <p>{{ $t("signupPage.baseline") }}  <router-link to="/sign-in">{{ $t("signupPage.loginButtonLabelKey") }}</router-link></p>
 
     <a-form
     name="custom-validation"
@@ -11,21 +12,20 @@
     @finish="handleFinish"
     @finishFailed="handleFinishFailed"
   >
-    <a-form-item ref="username" label="E-mail" name="username">
+    <a-form-item ref="username" :label="$t('signupPage.emailLabelKey')" name="username">
       <a-input v-model:value="formState.username" />
     </a-form-item>
-    <a-form-item ref="password1" has-feedback label="Password" name="password1">
+    <a-form-item ref="password1" has-feedback :label="$t('signupPage.passwordLabelKey')" name="password1">
       <a-input-password v-model:value="formState.password1" />
     </a-form-item>
-    <a-form-item ref="password2" has-feedback label="Confirm" name="password2">
+    <a-form-item ref="password2" has-feedback :label="$t('signupPage.confirmPasswordLabelKey')" name="password2">
       <a-input v-model:value="formState.password2" type="password" autocomplete="off" />
     </a-form-item>
     <a-form-item :wrapper-col="{ span: 14, offset: 4 }">
-      <a-button type="primary" html-type="submit">Submit</a-button>
-      <a-button style="margin-left: 10px" @click="resetForm">Reset</a-button>
+      <a-button type="primary" html-type="submit">{{ $t("signupPage.registerButtonLabelKey") }}</a-button>
+      <a-button style="margin-left: 10px" @click="resetForm">{{ $t("signupPage.resetButtonLabelKey") }}</a-button>
     </a-form-item>
   </a-form>
-  <router-link to="sign-in">Sign in</router-link>
   </div>
 </template>
 
@@ -35,6 +35,7 @@ import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'
 import { message } from 'ant-design-vue'
 import axios from 'axios'
+import { useI18n } from 'vue-i18n'
 
 export default defineComponent ({
   setup() {
@@ -46,10 +47,11 @@ export default defineComponent ({
       password1: '',
       password2: ''
     })
+    const { t } = useI18n()
     
     let validatePass = async (rule, value) => {
       if (value === '') {
-        return Promise.reject('Please input the password');
+        return Promise.reject(t('rules.required.message', { field: t('signupPage.passwordLabelKey') }));
       } else {
         if (formState.password2 !== '') {
           formRef.value.validateFields('password2');
@@ -59,9 +61,9 @@ export default defineComponent ({
     };
     let validatePass2 = async (rule, value) => {
       if (value === '') {
-        return Promise.reject('Please input the password again');
+        return Promise.reject(t('rules.required.message', { field: t('signupPage.confirmPasswordLabelKey') }));
       } else if (value !== formState.password1) {
-        return Promise.reject("Two inputs don't match!");
+        return Promise.reject(t('rules.mismatch.message'));
       } else {
         return Promise.resolve();
       }
@@ -69,8 +71,8 @@ export default defineComponent ({
 
     const rules = {
       username: [
-        { required: true, message: 'E-mail is required', trigger: 'blur' },
-        { min: 1, max: 255, message: 'Length should be 3 to 5', trigger: 'blur' }
+        { required: true, message: t('rules.required.message', { field: t('signupPage.emailLabelKey') }), trigger: 'blur' },
+        { min: 5, max: 255, message: t('rules.length.message', { field: t('signupPage.emailLabelKey'), length: 5 }), trigger: 'blur' }
       ],
       password1: [{ required: true, validator: validatePass, trigger: 'change' }],
       password2: [{ required: true, validator: validatePass2, trigger: 'change' }],
@@ -146,6 +148,7 @@ export default defineComponent ({
       errorMessage,
       router,
       store,
+      t,
     }
   }
 })

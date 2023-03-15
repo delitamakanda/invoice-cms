@@ -12,4 +12,4 @@ axios.defaults.baseURL = '/'
 
 const app = createApp(App)
 app.config.globalProperties.$filters = filters
-app.use(i18n).app.use(Antd).use(store).use(router, axios).mount('#app')
+app.use(i18n).use(Antd).use(store).use(router, axios).mount('#app')

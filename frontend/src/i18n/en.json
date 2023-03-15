@@ -1,0 +1,37 @@
+{
+    "hello": "world",
+    "rules": {
+        "required": {
+            "message": "{field} is required."
+        },
+        "length": {
+            "message": "{field} must be at least {length} characters long."
+        },
+        "mismatch": {
+            "message": "Two inputs don't match!"
+        }
+    },
+    "aboutPage": {
+        "title": "FAQ"
+    },
+    "signupPage": {
+        "title": "Sign up",
+        "baseline": "Already have an account?",
+        "loginButtonLabelKey": "Log in",
+        "emailLabelKey": "E-mail address",
+        "passwordLabelKey": "Password",
+        "confirmPasswordLabelKey": "Confirm Password",
+        "resetButtonLabelKey": "Reset",
+        "registerButtonLabelKey": "Sign Up"
+    },
+    "signinPage": {
+        "title": "Sign in",
+        "emailLabelKey": "E-mail address",
+        "passwordLabelKey": "Password",
+        "rememberMeLabelKey": "Remember me",
+        "forgotPasswordLabelKey": "Forgot password?",
+        "baseline": "Sign into your account or",
+        "registerButtonLabelKey": "Register now!",
+        "btnSigninKey": "Sign in"
+    }
+}

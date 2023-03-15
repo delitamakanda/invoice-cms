@@ -1,12 +1,12 @@
 <template>
       <div class="page-about">
+            <a-typography-title class="page-about-title">{{ $t("aboutPage.title") }}</a-typography-title>
             <a-row>
                   <a-col :span="12">
-                        <img :src="require('../assets/images/illustration-woman-online-desktop.svg')" alt="Illustration" :style="{ margin: '15% 0 0 -5%'}" />
-                        <img :src="require('../assets/images/illustration-box-desktop.svg')" alt="Illustration 2" :style="{ margin: '20% 0 0 -539px '}" />
+                        <img :src="require('../assets/images/illustration-woman-online-desktop.svg')" alt="Illustration" />
+                        <img :src="require('../assets/images/illustration-box-desktop.svg')" alt="Illustration 2" />
                   </a-col>
                   <a-col :span="12">
-                        <a-typography-title class="page-about-title">FAQ</a-typography-title>
                         <a-collapse v-model:activeKey="activeKey" expandIconPosition="right" :bordered="false" :style="{background: '#fff'}" accordion>
                               <a-collapse-panel :key="t.id" v-for="(t) in text" :header="t.title">
                                     <p>{{ t.text }}</p>
