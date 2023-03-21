@@ -24,5 +24,6 @@ urlpatterns = [
     path('api/v1/', include('apps.client.urls')),
     path('api/v1/', include('apps.team.urls')),
     path('api/v1/', include('apps.invoice.urls')),
+    path('ads.txt', TemplateView.as_view(template_name='ads.txt', content_type="text/plain"), name='ads'),
     path('', TemplateView.as_view(template_name='application.html'), name='application'),
 ]
