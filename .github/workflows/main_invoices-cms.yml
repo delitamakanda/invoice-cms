@@ -32,6 +32,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install python-dotenv
           pip install -r requirements.txt
+
+      - name: Collect static files
+        run: python manage.py collectstatic
+
+      - name: Make migrations and run it
+        run: |
+          python manage.py makemigrations
+          python manage.py migrate
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
       
