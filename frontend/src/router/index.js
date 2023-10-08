@@ -1,5 +1,5 @@
 import store from '@/store'
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 
 import DashboardView from '@/views/dashboard/DashboardView'
 
@@ -124,7 +124,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(process.env.BASE_URL),
+  history: createWebHistory(process.env.VUE_APP_BASE_URL),
   routes
 })
 

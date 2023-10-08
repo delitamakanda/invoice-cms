@@ -12,11 +12,11 @@ import 'ant-design-vue/dist/antd.css'
 import { datadogRum } from '@datadog/browser-rum';
 
 datadogRum.init({
-    applicationId: process.env.DATADOG_APPLICATION_ID,
-    clientToken: process.env.DATADOG_CLIENT_TOKEN,
-    site: process.env.DATADOG_SITE,
-    service: process.env.DATADOG_SERVICE,
-    env: process.env.DATADOG_ENV,
+    applicationId: process.env.VUE_APP_DATADOG_APPLICATION_ID,
+    clientToken: process.env.VUE_APP_DATADOG_CLIENT_TOKEN,
+    site: process.env.VUE_APP_DATADOG_SITE,
+    service: process.env.VUE_APP_DATADOG_SERVICE,
+    env: process.env.VUE_APP_DATADOG_ENV,
     // Specify a version number to identify the deployed version of your application in Datadog 
     // version: '1.0.0', 
     sessionSampleRate:100,
