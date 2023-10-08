@@ -36,25 +36,25 @@
       "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-Regular.85ff22d4.ttf",
       "publicPath": "/static/fonts/KumbhSans-Regular.85ff22d4.ttf"
     },
-    "fonts/KumbhSans-Thin.66bc02e7.ttf": {
-      "name": "fonts/KumbhSans-Thin.66bc02e7.ttf",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-Thin.66bc02e7.ttf",
-      "publicPath": "/static/fonts/KumbhSans-Thin.66bc02e7.ttf"
-    },
     "fonts/KumbhSans-SemiBold.11611cce.ttf": {
       "name": "fonts/KumbhSans-SemiBold.11611cce.ttf",
       "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-SemiBold.11611cce.ttf",
       "publicPath": "/static/fonts/KumbhSans-SemiBold.11611cce.ttf"
     },
-    "css/app.6e40c49b.css": {
-      "name": "css/app.6e40c49b.css",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/css/app.6e40c49b.css",
-      "publicPath": "/static/css/app.6e40c49b.css"
+    "fonts/KumbhSans-Thin.66bc02e7.ttf": {
+      "name": "fonts/KumbhSans-Thin.66bc02e7.ttf",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-Thin.66bc02e7.ttf",
+      "publicPath": "/static/fonts/KumbhSans-Thin.66bc02e7.ttf"
     },
-    "js/app.d13e1de8.js": {
-      "name": "js/app.d13e1de8.js",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/js/app.d13e1de8.js",
-      "publicPath": "/static/js/app.d13e1de8.js"
+    "css/app.62591814.css": {
+      "name": "css/app.62591814.css",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/css/app.62591814.css",
+      "publicPath": "/static/css/app.62591814.css"
+    },
+    "js/app.bc9ee2b4.js": {
+      "name": "js/app.bc9ee2b4.js",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/js/app.bc9ee2b4.js",
+      "publicPath": "/static/js/app.bc9ee2b4.js"
     },
     "img/illustration-box-desktop.aec62988.svg": {
       "name": "img/illustration-box-desktop.aec62988.svg",
@@ -66,30 +66,15 @@
       "path": "/Users/delitamakanda/projects/invoices/frontend/dist/img/illustration-woman-online-desktop.e99d2ea3.svg",
       "publicPath": "/static/img/illustration-woman-online-desktop.e99d2ea3.svg"
     },
-    "css/584.dd52a30c.css": {
-      "name": "css/584.dd52a30c.css",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/css/584.dd52a30c.css",
-      "publicPath": "/static/css/584.dd52a30c.css"
-    },
-    "js/584.7152fa58.js": {
-      "name": "js/584.7152fa58.js",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/js/584.7152fa58.js",
-      "publicPath": "/static/js/584.7152fa58.js"
-    },
     "favicon.ico": {
       "name": "favicon.ico",
       "path": "/Users/delitamakanda/projects/invoices/frontend/dist/favicon.ico",
       "publicPath": "/static/favicon.ico"
     },
-    "js/app.d13e1de8.js.map": {
-      "name": "js/app.d13e1de8.js.map",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/js/app.d13e1de8.js.map",
-      "publicPath": "/static/js/app.d13e1de8.js.map"
-    },
-    "js/584.7152fa58.js.map": {
-      "name": "js/584.7152fa58.js.map",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/js/584.7152fa58.js.map",
-      "publicPath": "/static/js/584.7152fa58.js.map"
+    "js/app.bc9ee2b4.js.map": {
+      "name": "js/app.bc9ee2b4.js.map",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/js/app.bc9ee2b4.js.map",
+      "publicPath": "/static/js/app.bc9ee2b4.js.map"
     },
     "index.html": {
       "name": "index.html",
@@ -99,10 +84,8 @@
   },
   "chunks": {
     "app": [
-      "css/584.dd52a30c.css",
-      "js/584.7152fa58.js",
-      "css/app.6e40c49b.css",
-      "js/app.d13e1de8.js"
+      "css/app.62591814.css",
+      "js/app.bc9ee2b4.js"
     ]
   },
   "publicPath": "/static/"

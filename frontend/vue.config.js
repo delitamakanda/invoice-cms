@@ -10,12 +10,7 @@ module.exports = defineConfig({
   configureWebpack: {
     plugins: [
       new NodePolyfillPlugin()
-    ],
-    optimization: {
-      splitChunks: {
-        chunks: 'all'
-      }
-    }
+    ]
   },
 
   chainWebpack: config => {
