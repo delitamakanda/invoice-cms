@@ -46,15 +46,15 @@
       "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-Thin.66bc02e7.ttf",
       "publicPath": "/static/fonts/KumbhSans-Thin.66bc02e7.ttf"
     },
-    "css/app.8aabaedc.css": {
-      "name": "css/app.8aabaedc.css",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/css/app.8aabaedc.css",
-      "publicPath": "/static/css/app.8aabaedc.css"
+    "css/app.62591814.css": {
+      "name": "css/app.62591814.css",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/css/app.62591814.css",
+      "publicPath": "/static/css/app.62591814.css"
     },
-    "js/app.6dee393a.js": {
-      "name": "js/app.6dee393a.js",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/js/app.6dee393a.js",
-      "publicPath": "/static/js/app.6dee393a.js"
+    "js/app.febd2757.js": {
+      "name": "js/app.febd2757.js",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/js/app.febd2757.js",
+      "publicPath": "/static/js/app.febd2757.js"
     },
     "img/illustration-box-desktop.aec62988.svg": {
       "name": "img/illustration-box-desktop.aec62988.svg",
@@ -71,10 +71,10 @@
       "path": "/Users/delitamakanda/projects/invoices/frontend/dist/favicon.ico",
       "publicPath": "/static/favicon.ico"
     },
-    "js/app.6dee393a.js.map": {
-      "name": "js/app.6dee393a.js.map",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/js/app.6dee393a.js.map",
-      "publicPath": "/static/js/app.6dee393a.js.map"
+    "js/app.febd2757.js.map": {
+      "name": "js/app.febd2757.js.map",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/js/app.febd2757.js.map",
+      "publicPath": "/static/js/app.febd2757.js.map"
     },
     "index.html": {
       "name": "index.html",
@@ -84,8 +84,8 @@
   },
   "chunks": {
     "app": [
-      "css/app.8aabaedc.css",
-      "js/app.6dee393a.js"
+      "css/app.62591814.css",
+      "js/app.febd2757.js"
     ]
   },
   "publicPath": "/static/"
