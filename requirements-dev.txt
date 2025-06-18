@@ -28,7 +28,7 @@ social-auth-app-django==5.4.1
 social-auth-core==4.5.4
 sqlparse==0.5.0
 uritemplate==4.1.1
-urllib3==1.26.19
+urllib3==2.5.0
 django-pdfkit==0.3.1 
 pdfkit==0.6.0
 django-webpack-loader==1.6.0
