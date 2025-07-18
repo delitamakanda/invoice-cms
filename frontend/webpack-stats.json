@@ -46,35 +46,35 @@
       "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-Thin.66bc02e7.ttf",
       "publicPath": "/static/fonts/KumbhSans-Thin.66bc02e7.ttf"
     },
-    "css/app.62591814.css": {
-      "name": "css/app.62591814.css",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/css/app.62591814.css",
-      "publicPath": "/static/css/app.62591814.css"
+    "css/app.2472f63a.css": {
+      "name": "css/app.2472f63a.css",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/css/app.2472f63a.css",
+      "publicPath": "/static/css/app.2472f63a.css"
     },
-    "js/app.58787119.js": {
-      "name": "js/app.58787119.js",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/js/app.58787119.js",
-      "publicPath": "/static/js/app.58787119.js"
-    },
-    "img/illustration-box-desktop.aec62988.svg": {
-      "name": "img/illustration-box-desktop.aec62988.svg",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/img/illustration-box-desktop.aec62988.svg",
-      "publicPath": "/static/img/illustration-box-desktop.aec62988.svg"
+    "js/app.4faf578d.js": {
+      "name": "js/app.4faf578d.js",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/js/app.4faf578d.js",
+      "publicPath": "/static/js/app.4faf578d.js"
     },
     "img/illustration-woman-online-desktop.e99d2ea3.svg": {
       "name": "img/illustration-woman-online-desktop.e99d2ea3.svg",
       "path": "/Users/delitamakanda/projects/invoices/frontend/dist/img/illustration-woman-online-desktop.e99d2ea3.svg",
       "publicPath": "/static/img/illustration-woman-online-desktop.e99d2ea3.svg"
     },
+    "img/illustration-box-desktop.aec62988.svg": {
+      "name": "img/illustration-box-desktop.aec62988.svg",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/img/illustration-box-desktop.aec62988.svg",
+      "publicPath": "/static/img/illustration-box-desktop.aec62988.svg"
+    },
     "favicon.ico": {
       "name": "favicon.ico",
       "path": "/Users/delitamakanda/projects/invoices/frontend/dist/favicon.ico",
       "publicPath": "/static/favicon.ico"
     },
-    "js/app.58787119.js.map": {
-      "name": "js/app.58787119.js.map",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/js/app.58787119.js.map",
-      "publicPath": "/static/js/app.58787119.js.map"
+    "js/app.4faf578d.js.map": {
+      "name": "js/app.4faf578d.js.map",
+      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/js/app.4faf578d.js.map",
+      "publicPath": "/static/js/app.4faf578d.js.map"
     },
     "index.html": {
       "name": "index.html",
@@ -84,8 +84,8 @@
   },
   "chunks": {
     "app": [
-      "css/app.62591814.css",
-      "js/app.58787119.js"
+      "css/app.2472f63a.css",
+      "js/app.4faf578d.js"
     ]
   },
   "publicPath": "/static/"
