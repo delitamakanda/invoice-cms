@@ -1,92 +1,81 @@
 {
   "status": "done",
   "assets": {
+    "js/app.js": {
+      "name": "js/app.js",
+      "path": "C:\\DEV\\invoice-cms\\frontend\\dist\\js\\app.js",
+      "publicPath": "http://0.0.0.0:8080/js/app.js"
+    },
     "fonts/KumbhSans-Black.efcd666f.ttf": {
       "name": "fonts/KumbhSans-Black.efcd666f.ttf",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-Black.efcd666f.ttf",
-      "publicPath": "/static/fonts/KumbhSans-Black.efcd666f.ttf"
+      "path": "C:\\DEV\\invoice-cms\\frontend\\dist\\fonts\\KumbhSans-Black.efcd666f.ttf",
+      "publicPath": "http://0.0.0.0:8080/fonts/KumbhSans-Black.efcd666f.ttf"
     },
     "fonts/KumbhSans-Bold.22fec197.ttf": {
       "name": "fonts/KumbhSans-Bold.22fec197.ttf",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-Bold.22fec197.ttf",
-      "publicPath": "/static/fonts/KumbhSans-Bold.22fec197.ttf"
+      "path": "C:\\DEV\\invoice-cms\\frontend\\dist\\fonts\\KumbhSans-Bold.22fec197.ttf",
+      "publicPath": "http://0.0.0.0:8080/fonts/KumbhSans-Bold.22fec197.ttf"
     },
     "fonts/KumbhSans-ExtraBold.66b0d62c.ttf": {
       "name": "fonts/KumbhSans-ExtraBold.66b0d62c.ttf",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-ExtraBold.66b0d62c.ttf",
-      "publicPath": "/static/fonts/KumbhSans-ExtraBold.66b0d62c.ttf"
+      "path": "C:\\DEV\\invoice-cms\\frontend\\dist\\fonts\\KumbhSans-ExtraBold.66b0d62c.ttf",
+      "publicPath": "http://0.0.0.0:8080/fonts/KumbhSans-ExtraBold.66b0d62c.ttf"
     },
     "fonts/KumbhSans-ExtraLight.36b78c35.ttf": {
       "name": "fonts/KumbhSans-ExtraLight.36b78c35.ttf",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-ExtraLight.36b78c35.ttf",
-      "publicPath": "/static/fonts/KumbhSans-ExtraLight.36b78c35.ttf"
+      "path": "C:\\DEV\\invoice-cms\\frontend\\dist\\fonts\\KumbhSans-ExtraLight.36b78c35.ttf",
+      "publicPath": "http://0.0.0.0:8080/fonts/KumbhSans-ExtraLight.36b78c35.ttf"
     },
     "fonts/KumbhSans-Light.b23c7556.ttf": {
       "name": "fonts/KumbhSans-Light.b23c7556.ttf",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-Light.b23c7556.ttf",
-      "publicPath": "/static/fonts/KumbhSans-Light.b23c7556.ttf"
+      "path": "C:\\DEV\\invoice-cms\\frontend\\dist\\fonts\\KumbhSans-Light.b23c7556.ttf",
+      "publicPath": "http://0.0.0.0:8080/fonts/KumbhSans-Light.b23c7556.ttf"
     },
     "fonts/KumbhSans-Medium.e8a960b0.ttf": {
       "name": "fonts/KumbhSans-Medium.e8a960b0.ttf",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-Medium.e8a960b0.ttf",
-      "publicPath": "/static/fonts/KumbhSans-Medium.e8a960b0.ttf"
+      "path": "C:\\DEV\\invoice-cms\\frontend\\dist\\fonts\\KumbhSans-Medium.e8a960b0.ttf",
+      "publicPath": "http://0.0.0.0:8080/fonts/KumbhSans-Medium.e8a960b0.ttf"
     },
     "fonts/KumbhSans-Regular.85ff22d4.ttf": {
       "name": "fonts/KumbhSans-Regular.85ff22d4.ttf",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-Regular.85ff22d4.ttf",
-      "publicPath": "/static/fonts/KumbhSans-Regular.85ff22d4.ttf"
+      "path": "C:\\DEV\\invoice-cms\\frontend\\dist\\fonts\\KumbhSans-Regular.85ff22d4.ttf",
+      "publicPath": "http://0.0.0.0:8080/fonts/KumbhSans-Regular.85ff22d4.ttf"
     },
     "fonts/KumbhSans-SemiBold.11611cce.ttf": {
       "name": "fonts/KumbhSans-SemiBold.11611cce.ttf",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-SemiBold.11611cce.ttf",
-      "publicPath": "/static/fonts/KumbhSans-SemiBold.11611cce.ttf"
+      "path": "C:\\DEV\\invoice-cms\\frontend\\dist\\fonts\\KumbhSans-SemiBold.11611cce.ttf",
+      "publicPath": "http://0.0.0.0:8080/fonts/KumbhSans-SemiBold.11611cce.ttf"
     },
     "fonts/KumbhSans-Thin.66bc02e7.ttf": {
       "name": "fonts/KumbhSans-Thin.66bc02e7.ttf",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/fonts/KumbhSans-Thin.66bc02e7.ttf",
-      "publicPath": "/static/fonts/KumbhSans-Thin.66bc02e7.ttf"
-    },
-    "css/app.2472f63a.css": {
-      "name": "css/app.2472f63a.css",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/css/app.2472f63a.css",
-      "publicPath": "/static/css/app.2472f63a.css"
-    },
-    "js/app.4faf578d.js": {
-      "name": "js/app.4faf578d.js",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/js/app.4faf578d.js",
-      "publicPath": "/static/js/app.4faf578d.js"
-    },
-    "img/illustration-woman-online-desktop.e99d2ea3.svg": {
-      "name": "img/illustration-woman-online-desktop.e99d2ea3.svg",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/img/illustration-woman-online-desktop.e99d2ea3.svg",
-      "publicPath": "/static/img/illustration-woman-online-desktop.e99d2ea3.svg"
+      "path": "C:\\DEV\\invoice-cms\\frontend\\dist\\fonts\\KumbhSans-Thin.66bc02e7.ttf",
+      "publicPath": "http://0.0.0.0:8080/fonts/KumbhSans-Thin.66bc02e7.ttf"
     },
     "img/illustration-box-desktop.aec62988.svg": {
       "name": "img/illustration-box-desktop.aec62988.svg",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/img/illustration-box-desktop.aec62988.svg",
-      "publicPath": "/static/img/illustration-box-desktop.aec62988.svg"
+      "path": "C:\\DEV\\invoice-cms\\frontend\\dist\\img\\illustration-box-desktop.aec62988.svg",
+      "publicPath": "http://0.0.0.0:8080/img/illustration-box-desktop.aec62988.svg"
+    },
+    "img/illustration-woman-online-desktop.e99d2ea3.svg": {
+      "name": "img/illustration-woman-online-desktop.e99d2ea3.svg",
+      "path": "C:\\DEV\\invoice-cms\\frontend\\dist\\img\\illustration-woman-online-desktop.e99d2ea3.svg",
+      "publicPath": "http://0.0.0.0:8080/img/illustration-woman-online-desktop.e99d2ea3.svg"
     },
     "favicon.ico": {
       "name": "favicon.ico",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/favicon.ico",
-      "publicPath": "/static/favicon.ico"
-    },
-    "js/app.4faf578d.js.map": {
-      "name": "js/app.4faf578d.js.map",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/js/app.4faf578d.js.map",
-      "publicPath": "/static/js/app.4faf578d.js.map"
+      "path": "C:\\DEV\\invoice-cms\\frontend\\dist\\favicon.ico",
+      "publicPath": "http://0.0.0.0:8080/favicon.ico"
     },
     "index.html": {
       "name": "index.html",
-      "path": "/Users/delitamakanda/projects/invoices/frontend/dist/index.html",
-      "publicPath": "/static/index.html"
+      "path": "C:\\DEV\\invoice-cms\\frontend\\dist\\index.html",
+      "publicPath": "http://0.0.0.0:8080/index.html"
     }
   },
   "chunks": {
     "app": [
-      "css/app.2472f63a.css",
-      "js/app.4faf578d.js"
+      "js/app.js"
     ]
   },
-  "publicPath": "/static/"
+  "publicPath": "http://0.0.0.0:8080/"
 }

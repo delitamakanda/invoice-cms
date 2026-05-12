@@ -71,10 +71,10 @@
 </template>
 
 <script>
-import { authAxios } from '../../../utils/auth'
+import { authAxios } from '@/utils/auth'
 import { defineComponent, reactive } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-const fileDownload = require('js-file-download')
+import fileDownload from 'js-file-download'
 import { message } from 'ant-design-vue'
 
 const columns = [
