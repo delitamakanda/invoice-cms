@@ -9,9 +9,9 @@ Ces consignes s'appliquent à tout le dépôt `invoice-cms`.
 ## Vue rapide du projet
 
 - Application de génération et de gestion de factures.
-- Backend : Django 4.2 + Django REST Framework, projet `invoices/`, apps métier dans `apps/`.
+- Backend : Python 3.14 + Django 6.0 + Django REST Framework, projet `invoices/`, apps métier dans `apps/`.
 - Frontend : Vue 3 + Vue CLI + Ant Design Vue dans `frontend/`.
-- Authentification : Djoser + token DRF côté API, token stocké dans `localStorage` côté frontend.
+- Authentification : endpoints DRF internes compatibles token DRF côté API, token stocké dans `localStorage` côté frontend.
 - PDF : templates Django dans `templates/`, génération via `pdfkit`/`wkhtmltopdf`.
 - Dev local : base SQLite par défaut ; production : configuration PostgreSQL Azure dans `invoices/settings_prod.py`.
 
@@ -20,7 +20,7 @@ Ces consignes s'appliquent à tout le dépôt `invoice-cms`.
 ### Backend
 
 ```bash
-python3 -m venv invoices_env
+python3.14 -m venv invoices_env
 source invoices_env/bin/activate
 pip install -r requirements.txt
 python3 manage.py migrate

@@ -8,7 +8,7 @@ Mémoire durable du projet `invoice-cms` pour les agents IA.
 
 ## Stack actuelle
 
-- Backend : Django 4.2, Django REST Framework, Djoser, authentification par token DRF.
+- Backend : Python 3.14, Django 6.0, Django REST Framework, endpoints auth internes, authentification par token DRF.
 - Frontend : Vue 3, Vue Router 4, Vuex 4, Ant Design Vue 2, Vue CLI 5.
 - Base locale : SQLite via `invoices/settings.py`.
 - Base production : PostgreSQL Azure via `invoices/settings_prod.py`.
