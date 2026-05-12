@@ -5,7 +5,7 @@ name: Node.js CI
 
 defaults:
   run:
-    working-directory: ./frontend
+    working-directory: frontend
 
 on:
   push:
