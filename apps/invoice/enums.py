@@ -1,0 +1,8 @@
+class ElectronicInvoiceStatus:
+    DRAFT = 'DRAFT'
+    PDF_GENERATED = 'PDF_GENERATED'
+    READY_TO_SEND = 'READY_TO_SEND'
+    SENT = 'SENT'
+    ACCEPTED = 'ACCEPTED'
+    REJECTED = 'REJECTED'
+    FAILED = 'FAILED'
