@@ -8,7 +8,7 @@ from django.db import models
 from apps.client.models import Client
 from apps.team.models import Team
 
-from apps.invoice.enums import ElectronicInvoiceStatus
+from apps.invoice.enums import ElectronicInvoiceStatus, EReportingStatus
 
 class Invoice(models.Model):
     INVOICE = 'invoice'
@@ -56,6 +56,15 @@ class Invoice(models.Model):
     pdp_last_payload = models.JSONField(blank=True, null=True, default=dict)
     pdp_last_response = models.JSONField(blank=True, null=True, default=dict)
     pdp_retry_count = models.IntegerField(default=0)
+    
+    # e-reporting properties
+    e_reporting_status = models.CharField(max_length=20, default=EReportingStatus.NOT_REQUIRED)
+    e_reporting_required = models.BooleanField(default=False)
+    e_reporting_reference = models.CharField(max_length=255, blank=True, null=True)
+    e_reporting_last_payload = models.JSONField(blank=True, null=True, default=dict)
+    e_reporting_last_response = models.JSONField(blank=True, null=True, default=dict)
+    e_reporting_retry_count = models.IntegerField(default=0)
+    e_reporting_rejection_reason = models.CharField(max_length=255, blank=True, null=True)
     
 
     class Meta:

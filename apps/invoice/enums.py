@@ -6,3 +6,12 @@ class ElectronicInvoiceStatus:
     ACCEPTED = 'ACCEPTED'
     REJECTED = 'REJECTED'
     FAILED = 'FAILED'
+    
+
+class EReportingStatus:
+    NOT_REQUIRED = 'NOT_REQUIRED'
+    PENDING = 'PENDING'
+    READY = 'READY'
+    REJECTED = 'REJECTED'
+    ACCEPTED = 'ACCEPTED'
+    FAILED = 'FAILED'
