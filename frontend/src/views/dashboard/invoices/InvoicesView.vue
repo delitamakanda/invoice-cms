@@ -40,6 +40,9 @@
         Is paid
       </span>
     </template>
+    <template #electronic_status="{ record }">
+      <ElectronicInvoiceStatusBadge :status="record.electronic_status" />
+    </template>
     <template #action="{ record }">
       <span>
         <router-link :to="{ name: 'invoice', params: { id: record.id }}">details</router-link>
@@ -51,8 +54,9 @@
 </template>
 
 <script>
-import { authAxios } from '../../../utils/auth'
+import { authAxios } from '@/utils/auth.js'
 import { defineComponent, reactive } from 'vue'
+import ElectronicInvoiceStatusBadge from "@/views/dashboard/invoices/components/ElectronicInvoiceStatusBadge.vue";
 
 const columns = [
   {
@@ -103,6 +107,7 @@ const columns = [
 ];
 
 export default defineComponent ({
+  components: {ElectronicInvoiceStatusBadge},
     setup() {
 
         const state = reactive({
