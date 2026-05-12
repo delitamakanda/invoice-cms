@@ -31,7 +31,7 @@ uritemplate==4.1.1
 urllib3==2.6.0
 django-pdfkit==0.3.1 
 pdfkit==0.6.0
-django-webpack-loader==1.6.0
+django-webpack-loader==3.2.3
 psycopg2-binary
 python-dotenv
 whitenoise
