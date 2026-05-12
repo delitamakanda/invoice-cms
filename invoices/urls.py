@@ -1,7 +1,7 @@
 """invoices URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.0/topics/http/urls/
+    https://docs.djangoproject.com/en/6.0/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
 from django.contrib.sitemaps.views import sitemap
+from .auth_views import CurrentUserView, TokenLoginView, TokenLogoutView, UserCreateView
 from .sitemaps import StaticViewSitemap
 
 sitemaps = {
@@ -25,8 +26,10 @@ sitemaps = {
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/v1/', include('djoser.urls')),
-    path('api/v1/', include('djoser.urls.authtoken')),
+    path('api/v1/users/', UserCreateView.as_view(), name='user-create'),
+    path('api/v1/users/me/', CurrentUserView.as_view(), name='user-me'),
+    path('api/v1/token/login/', TokenLoginView.as_view(), name='token-login'),
+    path('api/v1/token/logout/', TokenLogoutView.as_view(), name='token-logout'),
     path('api/v1/', include('apps.client.urls')),
     path('api/v1/', include('apps.team.urls')),
     path('api/v1/', include('apps.invoice.urls')),

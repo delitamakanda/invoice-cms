@@ -41,7 +41,7 @@ Django sert aussi l'application frontend compilée via `TemplateView`, `django-w
 
 ### Projet `invoices/`
 
-- `invoices/settings.py` : configuration locale, SQLite, DRF, Djoser, CORS, templates et static files.
+- `invoices/settings.py` : configuration locale, SQLite, DRF, CORS, templates et static files.
 - `invoices/settings_prod.py` : surcharge production pour Azure/PostgreSQL, WhiteNoise et email SMTP.
 - `invoices/urls.py` : point d'entrée URL principal.
 - `invoices/sitemaps.py` : sitemap pour les vues statiques.
@@ -50,8 +50,7 @@ Django sert aussi l'application frontend compilée via `TemplateView`, `django-w
 
 Les routes principales sont incluses sous `/api/v1/` :
 
-- Djoser : inscription, connexion et endpoints utilisateur.
-- Djoser token auth : obtention/suppression de token.
+- Endpoints auth internes dans `invoices/auth_views.py` : inscription, utilisateur courant, obtention/suppression de token DRF.
 - `apps.client.urls` : endpoints clients.
 - `apps.team.urls` : endpoints équipes.
 - `apps.invoice.urls` : endpoints factures, génération PDF et rappels.
@@ -119,7 +118,7 @@ Les routes avec `meta.requireLogin` redirigent vers `/sign-in` si `store.state.u
 
 ### Authentification
 
-1. Le frontend appelle les endpoints Djoser/token sous `/api/v1/`.
+1. Le frontend appelle les endpoints auth/token sous `/api/v1/`.
 2. Le token reçu est stocké dans `localStorage`.
 3. Les appels authentifiés passent par `authAxios`, qui ajoute `Authorization: Token <token>`.
 4. Vue Router protège les pages dashboard à partir de l'état Vuex.

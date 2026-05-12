@@ -32,7 +32,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
-    'djoser',
     'webpack_loader',
 
     'apps.client.apps.ClientConfig',
@@ -42,7 +41,14 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 
-STATICFILES_STORAGE = ('whitenoise.storage.CompressedManifestStaticFilesStorage')
+STORAGES = {
+    'default': {
+        'BACKEND': 'django.core.files.storage.FileSystemStorage',
+    },
+    'staticfiles': {
+        'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage',
+    },
+}
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # DBHOST is only the server name, not the full URL

@@ -15,18 +15,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Set up Python version
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.9'
+          python-version: '3.14'
 
       - name: Create and start virtual environment
         run: |
           python -m venv venv
           source venv/bin/activate
-      
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
@@ -34,21 +34,21 @@ jobs:
           pip install -r requirements.txt
 
       - name: Collect static files
-        run: python manage.py collectstatic
+        run: python manage.py collectstatic --noinput
 
       - name: Make migrations and run it
         run: |
           python manage.py makemigrations
           python manage.py migrate
-        
+
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
-      
+
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v4
         with:
           name: python-app
           path: |
-            . 
+            .
             !venv/
 
   deploy:
@@ -64,7 +64,7 @@ jobs:
         with:
           name: python-app
           path: .
-          
+
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp

@@ -4,10 +4,14 @@
 cms générateur de factures
 
 ## Backend
-1. python3 -m venv invoices_env
+
+Backend cible : Python 3.14 + Django 6.0.
+
+1. python3.14 -m venv invoices_env
 2. source invoices_env/bin/activate
-3. python3 manage.py migrate
-4. python3 manage.py runserver
+3. pip install -r requirements.txt
+4. python3 manage.py migrate
+5. python3 manage.py runserver
 
 ## Frontend
 1. cd frontend
