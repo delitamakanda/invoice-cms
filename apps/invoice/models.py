@@ -8,6 +8,8 @@ from django.db import models
 from apps.client.models import Client
 from apps.team.models import Team
 
+from apps.invoice.enums import ElectronicInvoiceStatus
+
 class Invoice(models.Model):
     INVOICE = 'invoice'
     CREDIT_NOTE = 'credit_note'
@@ -46,6 +48,15 @@ class Invoice(models.Model):
     modified_by = models.ForeignKey(User, related_name='modified_invoices', on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
+    
+    # e-invoice properties
+    electronic_status = models.CharField(max_length=20, default=ElectronicInvoiceStatus.DRAFT)
+    pdp_reference = models.CharField(max_length=255, blank=True, null=True)
+    pdp_reject_reason = models.CharField(max_length=255, blank=True, null=True)
+    pdp_last_payload = models.JSONField(blank=True, null=True, default=dict)
+    pdp_last_response = models.JSONField(blank=True, null=True, default=dict)
+    pdp_retry_count = models.IntegerField(default=0)
+    
 
     class Meta:
         ordering = ('-created_at',)
