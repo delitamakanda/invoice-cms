@@ -16,6 +16,8 @@ from apps.team.models import Team
 from .models import Invoice, Item
 
 from .serializers import InvoiceSerializer, ItemSerializer
+from .services.invoicing_service import InvoiceService
+
 
 class InvoiceViewSet(viewsets.ModelViewSet):
     serializer_class = InvoiceSerializer
@@ -93,3 +95,43 @@ def send_reminder(request, invoice_id):
     message.send()
 
     return Response()
+
+@api_view(['POST'])
+def prepare_electronic_invoice(request, pk):
+    invoice = get_object_or_404(Invoice, pk=pk, created_by=request.user)
+    
+    service = InvoiceService()
+    invoice = service.prepare(invoice)
+    
+    return Response({
+        'id': invoice.id,
+        'electronic_status': invoice.electronic_status,
+        'pdp_last_payload': invoice.pdp_last_payload,
+    })
+
+@api_view(['POST'])
+def send_electronic_invoice(request, pk):
+    invoice = get_object_or_404(Invoice, pk=pk, created_by=request.user)
+    service = InvoiceService()
+    invoice = service.send(invoice)
+    return Response({
+        'id': invoice.id,
+        'electronic_status': invoice.electronic_status,
+        'pdp_last_response': invoice.pdp_last_response,
+        'pdp_retry_count': invoice.pdp_retry_count,
+        'pdp_reference': invoice.pdp_reference,
+        'pdp_reject_reason': invoice.pdp_reject_reason,
+    })
+
+@api_view(['GET'])
+def get_invoice_status(request, pk):
+    invoice = get_object_or_404(Invoice, pk=pk, created_by=request.user)
+    return Response({
+        'electronic_status': invoice.electronic_status,
+        'id': invoice.id,
+        'pdp_last_response': invoice.pdp_last_response,
+        'pdp_retry_count': invoice.pdp_retry_count,
+        'pdp_reference': invoice.pdp_reference,
+        'pdp_reject_reason': invoice.pdp_reject_reason,
+    })
+
