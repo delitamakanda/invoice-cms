@@ -16,7 +16,7 @@ Navigateur Vue 3
   -> templates Django + pdfkit pour les PDFs
 ```
 
-Django sert aussi l'application frontend compilée via `TemplateView` et `django-webpack-loader`/assets statiques.
+Django sert aussi l'application frontend compilée via `TemplateView`, `django-webpack-loader` 3.x et les assets statiques générés par Vue CLI.
 
 ## Arborescence principale
 
@@ -183,7 +183,8 @@ python3 manage.py test
 Frontend :
 
 ```bash
-cd frontend && npm run build
+(cd frontend && npm run build)
+python3 manage.py collectstatic --noinput
 ```
 
 Pour une modification documentaire seulement, vérifier au minimum le diff Git et, si l'environnement Python est prêt, `python3 manage.py check`.

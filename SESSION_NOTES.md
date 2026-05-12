@@ -26,3 +26,4 @@ Notes de session pour les agents IA travaillant sur `invoice-cms`.
 - Mettre à jour `MEMORY.md` lorsqu'une convention durable ou une contrainte importante change.
 - Mettre à jour `ARCHITECTURE.md` lors d'un changement structurel backend, frontend, API ou infrastructure.
 - Ajouter une nouvelle entrée datée dans ce fichier à la fin de chaque session significative.
+- 2026-05-12 : Option 3 retenue pour `django-webpack-loader` ; dépendance backend mise à jour vers 3.2.3 et configuration `WEBPACK_LOADER` alignée avec la série 3.x (`CACHE`, `POLL_INTERVAL`, `IGNORE`, bundle à la racine de `frontend/dist`).

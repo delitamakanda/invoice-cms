@@ -48,3 +48,4 @@ Mémoire durable du projet `invoice-cms` pour les agents IA.
 - Pour un changement backend : exécuter `python3 manage.py check` et, si possible, `python3 manage.py test`.
 - Pour un changement frontend : exécuter `cd frontend && npm run build` si les dépendances sont installées.
 - Mettre à jour cette mémoire si une décision durable, une convention ou une contrainte importante change.
+- Intégration frontend/backend conservée : Django sert la SPA Vue compilée via `django-webpack-loader` 3.x, `frontend/webpack-stats.json` et `frontend/dist` dans `STATICFILES_DIRS`.
