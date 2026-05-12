@@ -3,8 +3,8 @@
             <a-typography-title class="page-about-title">{{ $t("aboutPage.title") }}</a-typography-title>
             <a-row>
                   <a-col :span="12">
-                        <img :src="require('../assets/images/illustration-woman-online-desktop.svg')" alt="Illustration" />
-                        <img :src="require('../assets/images/illustration-box-desktop.svg')" alt="Illustration 2" />
+                        <img :src="pictureWoman1" alt="Illustration" />
+                        <img :src="pictureWoman2" alt="Illustration 2" />
                   </a-col>
                   <a-col :span="12">
                         <a-collapse v-model:activeKey="activeKey" expandIconPosition="right" :bordered="false" :style="{background: '#fff'}" accordion>
@@ -21,6 +21,9 @@
 
 <script>
 import { defineComponent, ref } from 'vue'
+
+import pictureWoman1 from '@/assets/images/illustration-woman-online-desktop.svg'
+import pictureWoman2 from '@/assets/images/illustration-box-desktop.svg'
 
 export default defineComponent({
   setup() {
@@ -58,7 +61,9 @@ export default defineComponent({
       return {
         activeKey,
         text,
-        customStyle
+        customStyle,
+        pictureWoman1,
+        pictureWoman2,
       }
   }
 });
@@ -66,11 +71,11 @@ export default defineComponent({
 
 <style lang="scss">
 .page-about-title {
-      font-family: var(--primary-font-bold);
+      font-family: var(--primary-font-bold),serif;
 }
 
 .ant-collapse-item-active .ant-collapse-header {
-      font-family: var(--primary-font-bold);
+      font-family: var(--primary-font-bold),serif;
 }
 
 @media screen and (max-width: 375px) {

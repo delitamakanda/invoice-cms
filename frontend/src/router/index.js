@@ -1,25 +1,25 @@
 import store from '@/store'
 import { createRouter, createWebHistory } from 'vue-router'
 
-import DashboardView from '@/views/dashboard/DashboardView'
+import DashboardView from '@/views/dashboard/DashboardView.vue'
 
-import AccountView from '@/views/dashboard/AccountView'
+import AccountView from '@/views/dashboard/AccountView.vue'
 
-import EditTeamView from '@/views/dashboard/teams/EditTeamView'
+import EditTeamView from '@/views/dashboard/teams/EditTeamView.vue'
 
-import ClientsView from '@/views/dashboard/clients/ClientsView'
-import AddClientView from '@/views/dashboard/clients/AddClientView'
-import EditClientView from '@/views/dashboard/clients/EditClientView'
-import ClientView from '@/views/dashboard/clients/ClientView'
+import ClientsView from '@/views/dashboard/clients/ClientsView.vue'
+import AddClientView from '@/views/dashboard/clients/AddClientView.vue'
+import EditClientView from '@/views/dashboard/clients/EditClientView.vue'
+import ClientView from '@/views/dashboard/clients/ClientView.vue'
 
-import InvoicesView from '@/views/dashboard/invoices/InvoicesView'
-import InvoiceView from '@/views/dashboard/invoices/InvoiceView'
-import AddInvoiceView from '@/views/dashboard/invoices/AddInvoiceView'
+import InvoicesView from '@/views/dashboard/invoices/InvoicesView.vue'
+import InvoiceView from '@/views/dashboard/invoices/InvoiceView.vue'
+import AddInvoiceView from '@/views/dashboard/invoices/AddInvoiceView.vue'
 
-import SignInView from '@/views/SignInView'
-import SignUpView from '@/views/SignUpView'
+import SignInView from '@/views/SignInView.vue'
+import SignUpView from '@/views/SignUpView.vue'
 
-import AboutView from '@/views/AboutView'
+import AboutView from '@/views/AboutView.vue'
 
 const routes = [
   {
@@ -124,7 +124,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.VUE_APP_BASE_URL),
+  history: createWebHistory(import.meta.VUE_APP_BASE_URL),
   routes
 })
 

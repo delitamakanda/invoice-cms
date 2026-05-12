@@ -146,7 +146,7 @@
 </script>
 
 <style lang="scss">
-@import '~@/fonts.scss';
+@use './fonts.scss';
 
 :root {
   --primary-color: #1890ff;
