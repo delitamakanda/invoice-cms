@@ -26,3 +26,19 @@ Notes de session pour les agents IA travaillant sur `invoice-cms`.
 - Mettre à jour `MEMORY.md` lorsqu'une convention durable ou une contrainte importante change.
 - Mettre à jour `ARCHITECTURE.md` lors d'un changement structurel backend, frontend, API ou infrastructure.
 - Ajouter une nouvelle entrée datée dans ce fichier à la fin de chaque session significative.
+
+## Session du 2026-05-12
+
+### Demande
+
+- Upgrader les dépendances frontend vers les dernières updates.
+
+### Travail réalisé
+
+- Synchronisation des versions minimales déclarées dans `frontend/package.json` avec les versions déjà résolues dans `frontend/package-lock.json` pour Vue, Vue Router, Vuex, Sass et Sass Loader.
+- Maintien du verrou npm cohérent avec les versions déclarées afin de préserver `npm ci`.
+
+### État connu
+
+- Le registre npm était inaccessible depuis l'environnement shell (`403 Forbidden` via le proxy), ce qui a empêché une régénération complète du lockfile vers les dernières versions publiées en ligne.
+- Le build frontend passe avec les dépendances actuellement installées/verrouillées, avec uniquement les avertissements de taille de bundle et de données Browserslist déjà présents.
