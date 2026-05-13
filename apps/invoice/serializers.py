@@ -82,6 +82,14 @@ class InvoiceSerializer(serializers.ModelSerializer):
             'pdp_last_payload',
             'pdp_last_response',
             'pdp_retry_count',
+
+            'e_reporting_status',
+            'e_reporting_required',
+            'e_reporting_reference',
+            'e_reporting_last_payload',
+            'e_reporting_last_response',
+            'e_reporting_retry_count',
+            'e_reporting_rejection_reason',
         )
     
     def create(self, validated_data):
