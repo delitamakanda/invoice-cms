@@ -24,7 +24,7 @@
         </template>
         <a-button type="default" v-if="!state.invoice.is_paid && !state.invoice.is_credit_for" @click="sendReminder()">Send reminder</a-button>
       </div>
-      <ElectronicInvoiceStatusBadge :status="state.invoice.electronic_status" />
+      <ElectronicInvoiceStatusBadge v-if="state.invoice.electronic_status" :status="state.invoice.electronic_status" />
       <a-descriptions size="small" :column="3">
         <a-descriptions-item label="Client">{{state.invoice.client_name}}</a-descriptions-item>
         <a-descriptions-item v-if="state.invoice.client_address1" label="Address">
