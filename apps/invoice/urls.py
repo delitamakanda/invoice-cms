@@ -16,5 +16,5 @@ urlpatterns = [
     
     path('invoices/<int:invoice_id>/prepare_electronic_invoice/', prepare_electronic_invoice, name='prepare_electronic_invoice'),
     path('invoices/<int:invoice_id>/send_electronic_invoice/', send_electronic_invoice, name='send_electronic_invoice'),
-    path('invoices/<int:invoice_id>/get_invoice_status/', get_invoice_status, name='get_invoice_status'),
+    path('invoices/<int:pk>/get_invoice_status/', get_invoice_status, name='get_invoice_status'),
 ]
