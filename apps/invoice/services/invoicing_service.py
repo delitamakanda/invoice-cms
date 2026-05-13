@@ -1,6 +1,5 @@
 from django.db import transaction
 
-from apps.client.models import Client
 from apps.invoice.enums import ElectronicInvoiceStatus
 from apps.invoice.services.mock_pdp_service import MockPDPService
 
