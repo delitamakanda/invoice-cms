@@ -68,6 +68,13 @@ class InvoiceSerializer(serializers.ModelSerializer):
             'modified_at',
             'items',
             'get_due_date_formatted',
+
+            'electronic_status',
+            'pdp_reference',
+            'pdp_reject_reason',
+            'pdp_last_payload',
+            'pdp_last_response',
+            'pdp_retry_count',
         )
     
     def create(self, validated_data):
