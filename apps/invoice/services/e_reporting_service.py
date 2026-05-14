@@ -26,10 +26,10 @@ class EReportingService:
                 "name": client.name,
                 "siret": client.org_number,
             },
-            'amounts': {
-                'total_ttc': invoice.gross_amount,
-                'total_vat': invoice.vat_amount,
-                'total_ht': invoice.net_amount,
+            "amounts": {
+                "total_ttc": str(invoice.gross_amount),
+                "total_vat": str(invoice.vat_amount),
+                "total_ht": str(invoice.net_amount),
             },
             "vat": {
                 "rate": str(getattr(invoice, "vat_rate", "20.00")),
