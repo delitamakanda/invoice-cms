@@ -17,3 +17,21 @@ export function getInvoiceStatus(invoiceId) {
         `api/v1/invoices/${invoiceId}/get_invoice_status/`,
     )
 }
+
+export function getEreportingStatus(invoiceId) {
+    return authAxios.get(
+        `api/v1/invoices/${invoiceId}/get_e_reporting_status/`
+    )
+}
+
+export function prepareEReporting(invoiceId) {
+    return authAxios.post(
+        `api/v1/invoices/${invoiceId}/prepare_e_reporting/`
+    )
+}
+
+export function sendEReporting(invoiceId) {
+    return authAxios.post(
+        `api/v1/invoices/${invoiceId}/send_e_reporting/`
+    )
+}

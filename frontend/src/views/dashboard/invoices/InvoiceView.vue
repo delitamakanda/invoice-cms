@@ -17,6 +17,11 @@
 
       <div class="buttons">
         <a-button type="primary" @click="downloadPdf()">Download PDF</a-button>
+        <a-button type="primary" @click="prepareEInvoice">Prepare e-facture</a-button>
+        <a-button type="primary" @click="sendEInvoice()">Send e-facture</a-button>
+
+        <a-button type="primary" @click="prepEReporting()">Prepare e-reporting</a-button>
+        <a-button type="primary" @click="sendingEReporting()">Send e-reporting</a-button>
 
         <template v-if="!state.invoice.is_credit_for && !state.invoice.is_credited">
         <a-button type="default" v-if="!state.invoice.is_paid" @click="setAsPaid()">Set as paid</a-button>
@@ -78,6 +83,7 @@ import { useRoute, useRouter } from 'vue-router'
 import fileDownload from 'js-file-download'
 import { message } from 'ant-design-vue'
 import ElectronicInvoiceStatusBadge from "@/views/dashboard/invoices/components/ElectronicInvoiceStatusBadge.vue";
+import { prepareInvoice, sendInvoice, getEreportingStatus, getInvoiceStatus, prepareEReporting, sendEReporting } from '@/views/dashboard/invoices/api/invoiceApi'
 
 const columns = [
   {
@@ -191,7 +197,26 @@ export default defineComponent ({
               console.log(JSON.stringify(error))
             })
 
-        } 
+        }
+
+        const prepareEInvoice = async () => {
+          await prepareInvoice(route.params.id)
+        }
+        const sendEInvoice = async () => {
+          await sendInvoice(route.params.id)
+        }
+        const prepEReporting = async () => {
+          await prepareEReporting(route.params.id)
+        }
+        const sendingEReporting = async () => {
+          await sendEReporting(route.params.id)
+        }
+        const getEReportingStatus = async () => {
+          await getEReportingStatus(route.params.id)
+        }
+        const getEInvoiceStatus = async () => {
+          await getEInvoiceStatus(route.params.id)
+        }
 
         return {
             state,
@@ -202,6 +227,12 @@ export default defineComponent ({
             setAsPaid,
             createCreditNote,
             sendReminder,
+            prepareEInvoice,
+            sendEInvoice,
+            prepEReporting,
+            sendingEReporting,
+            getEReportingStatus,
+            getEInvoiceStatus,
         }
     },
     methods: {
