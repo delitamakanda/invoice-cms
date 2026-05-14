@@ -14,7 +14,7 @@ urlpatterns = [
     path('invoices/<int:invoice_id>/generate_pdf/', generate_pdf, name='generate_pdf'),
     path('invoices/<int:invoice_id>/send_reminder/', send_reminder, name='send_reminder'),
     
-    path('invoices/<int:invoice_id>/prepare_electronic_invoice/', prepare_electronic_invoice, name='prepare_electronic_invoice'),
-    path('invoices/<int:invoice_id>/send_electronic_invoice/', send_electronic_invoice, name='send_electronic_invoice'),
+    path('invoices/<int:pk>/prepare_electronic_invoice/', prepare_electronic_invoice, name='prepare_electronic_invoice'),
+    path('invoices/<int:pk>/send_electronic_invoice/', send_electronic_invoice, name='send_electronic_invoice'),
     path('invoices/<int:pk>/get_invoice_status/', get_invoice_status, name='get_invoice_status'),
 ]
