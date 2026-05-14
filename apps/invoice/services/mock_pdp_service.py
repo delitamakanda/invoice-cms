@@ -30,6 +30,13 @@ class MockPDPService:
                 'pdp_reject_reason': 'Invalid invoice data',
             }
         
+        if scenario == 'DRAFT':
+            return {
+                'electronic_status': 'DRAFT',
+                'pdp_reference': None,
+                'message': 'Invoice is in draft state',
+            }
+        
         if scenario == 'SENT' or scenario == 'READY_TO_SEND' or scenario == 'PDF_GENERATED':
             return {
                 'electronic_status': 'SENT',
