@@ -97,6 +97,7 @@ def send_reminder(request, invoice_id):
     return Response()
 
 @api_view(['POST'])
+@permission_classes([permissions.IsAuthenticated])
 def prepare_electronic_invoice(request, pk):
     invoice = get_object_or_404(Invoice, pk=pk, created_by=request.user)
     
@@ -110,6 +111,7 @@ def prepare_electronic_invoice(request, pk):
     })
 
 @api_view(['POST'])
+@permission_classes([permissions.IsAuthenticated])
 def send_electronic_invoice(request, pk):
     invoice = get_object_or_404(Invoice, pk=pk, created_by=request.user)
     service = InvoiceService()
@@ -124,6 +126,7 @@ def send_electronic_invoice(request, pk):
     })
 
 @api_view(['GET'])
+@permission_classes([permissions.IsAuthenticated])
 def get_invoice_status(request, pk):
     invoice = get_object_or_404(Invoice, pk=pk, created_by=request.user)
     return Response({
