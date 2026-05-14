@@ -17,7 +17,7 @@ const labels = {
   SENT: 'Sent',
   READY_TO_SEND: 'Ready to send'
 }
-const message = computed(() => labels[props.status.toUpperCase()])
+const message = computed(() => labels[(props.status || 'unknown').toUpperCase()])
 
 const classes = computed(() => [
     'inline-flex rounded-full px-2 py-1 text-xs font-medium text-gray-700',
