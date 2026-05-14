@@ -34,6 +34,13 @@ class InvoiceSerializer(serializers.ModelSerializer):
             'modified_by',
             'created_at',
             'modified_at',
+            
+            'electronic_status',
+            'pdp_reference',
+            'pdp_reject_reason',
+            'pdp_last_payload',
+            'pdp_last_response',
+            'pdp_retry_count',
         )
         fields = (
             'id',
