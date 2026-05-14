@@ -1,7 +1,5 @@
 import pdfkit
 
-from django.shortcuts import render
-
 from django.core.exceptions import PermissionDenied
 from django.core.mail import EmailMultiAlternatives
 from django.http import HttpResponse
@@ -15,9 +13,9 @@ from rest_framework.response import Response
 from apps.team.models import Team
 from .models import Invoice, Item
 
-from .serializers import InvoiceSerializer, ItemSerializer
+from .serializers import InvoiceSerializer
 from .services.invoicing_service import InvoiceService
-
+from apps.invoice.services.e_reporting_service import EReportingService
 
 class InvoiceViewSet(viewsets.ModelViewSet):
     serializer_class = InvoiceSerializer
@@ -138,3 +136,45 @@ def get_invoice_status(request, pk):
         'pdp_reject_reason': invoice.pdp_reject_reason,
     })
 
+
+@api_view(['POST'])
+def prepare_e_reporting(request, pk):
+    invoice = Invoice.objects.get(pk=pk, created_by=request.user)
+    service = EReportingService()
+    invoice = service.prepare(invoice)
+    
+    return Response({
+        'id': invoice.id,
+        'e_reporting_status': invoice.e_reporting_status,
+        'e_reporting_required': invoice.e_reporting_required,
+        'payload': invoice.e_reporting_last_payload,
+    }, status=status.HTTP_200_OK)
+
+
+@api_view(['POST'])
+def send_e_reporting(request, pk):
+    invoice = Invoice.objects.get(pk=pk, created_by=request.user)
+    service = EReportingService()
+    invoice = service.report(invoice)
+    
+    return Response({
+        'id': invoice.id,
+        'e_reporting_status': invoice.e_reporting_status,
+        'e_reporting_reference': invoice.e_reporting_reference,
+        'e_reporting_rejection_reason': invoice.e_reporting_rejection_reason,
+        'e_reporting_retry_count': invoice.e_reporting_retry_count
+    }, status=status.HTTP_200_OK)
+
+@api_view(['GET'])
+def get_e_reporting_status(request, pk):
+    invoice = Invoice.objects.get(pk=pk, created_by=request.user)
+    return Response({
+        'id': invoice.id,
+        'e_reporting_required': invoice.e_reporting_required,
+        'e_reporting_last_response': invoice.e_reporting_last_response,
+        'e_reporting_retry_count': invoice.e_reporting_retry_count,
+        'e_reporting_last_payload': invoice.e_reporting_last_payload,
+        'e_reporting_status': invoice.e_reporting_status,
+        'e_reporting_reference': invoice.e_reporting_reference,
+        'e_reporting_rejection_reason': invoice.e_reporting_rejection_reason,
+    }, status=status.HTTP_200_OK)
