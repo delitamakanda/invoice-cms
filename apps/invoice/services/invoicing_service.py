@@ -20,9 +20,9 @@ class InvoiceService:
                 "email": client.email,
             },
             "amounts": {
-                "total_ht": str(invoice.gross_amount),
+                "total_ttc": str(invoice.gross_amount),
                 "total_tva": str(invoice.vat_amount),
-                "total_ttc": str(invoice.net_amount),
+                "total_ht": str(invoice.net_amount),
             }
         }
     
