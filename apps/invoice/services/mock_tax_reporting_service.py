@@ -29,6 +29,6 @@ class MockTaxReportingService:
         return {
             'e_reporting_status': 'ACCEPTED',
             'e_reporting_reference': f"REPORT_{uuid.uuid4()}",
-            'error': None,
+            'message': "data e-reporting sent successfully",
         }
         
