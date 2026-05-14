@@ -96,6 +96,13 @@ const columns = [
       customRender: 'is_paid',
     },
   },
+    {
+    key: 'electronic_status',
+    dataIndex: 'electronic_status',
+    slots: {
+      customRender: 'electronic_status',
+    },
+  },
   {
     title: '',
     key: 'action',
