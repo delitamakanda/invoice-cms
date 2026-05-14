@@ -55,6 +55,7 @@ class InvoiceService:
             invoice.electronic_status = ElectronicInvoiceStatus.FAILED
             invoice.pdp_retry_count +=1
             invoice.pdp_reject_reason = response['error']
+            invoice.pdp_reference = None
         elif response['electronic_status'] == ElectronicInvoiceStatus.SENT:
             invoice.electronic_status = ElectronicInvoiceStatus.SENT
             invoice.pdp_reference = response['pdp_reference']
