@@ -99,6 +99,7 @@ const columns = [
     {
     key: 'electronic_status',
     dataIndex: 'electronic_status',
+      title: 'Status',
     slots: {
       customRender: 'electronic_status',
     },
