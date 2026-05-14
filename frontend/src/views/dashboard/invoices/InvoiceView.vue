@@ -7,6 +7,8 @@
     <a-breadcrumb-item aria-current="true"><router-link :to="{ name: 'invoice', params: { id: route.params.id }}">Invoice #{{state.invoice.invoice_number}}</router-link></a-breadcrumb-item>
   </a-breadcrumb>
 
+    {{ state.eReportingStatus }} / {{state.eInvoiceStatus}}
+
     <a-page-header
       class="demo-page-header"
       style="border: 1px solid rgb(235, 237, 240)"
@@ -77,13 +79,20 @@
 </template>
 
 <script>
-import { authAxios } from '@/utils/auth'
-import { defineComponent, reactive } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import {authAxios} from '@/utils/auth'
+import {defineComponent, reactive} from 'vue'
+import {useRoute, useRouter} from 'vue-router'
 import fileDownload from 'js-file-download'
-import { message } from 'ant-design-vue'
+import {message} from 'ant-design-vue'
 import ElectronicInvoiceStatusBadge from "@/views/dashboard/invoices/components/ElectronicInvoiceStatusBadge.vue";
-import { prepareInvoice, sendInvoice, getEreportingStatus, getInvoiceStatus, prepareEReporting, sendEReporting } from '@/views/dashboard/invoices/api/invoiceApi'
+import {
+  getEreportingStatus,
+  getInvoiceStatus,
+  prepareEReporting,
+  prepareInvoice,
+  sendEReporting,
+  sendInvoice
+} from '@/views/dashboard/invoices/api/invoiceApi'
 
 const columns = [
   {
@@ -116,6 +125,8 @@ export default defineComponent ({
 
         const state = reactive({
             invoice: {},
+            eReportingStatus: '',
+            eInvoiceStatus: '',
         })
 
         const route = useRoute()
@@ -211,12 +222,17 @@ export default defineComponent ({
         const sendingEReporting = async () => {
           await sendEReporting(route.params.id)
         }
-        const getEReportingStatus = async () => {
-          await getEReportingStatus(route.params.id)
+        const getEReportStatus = async () => {
+          const { data } = await getEreportingStatus(route.params.id)
+          state.eReportingStatus = data
         }
-        const getEInvoiceStatus = async () => {
-          await getEInvoiceStatus(route.params.id)
+        const getEFactureStatus = async () => {
+          const { data } = await getInvoiceStatus(route.params.id)
+          state.eInvoiceStatus = data
         }
+
+        getEReportStatus()
+        getEFactureStatus()
 
         return {
             state,
@@ -231,8 +247,8 @@ export default defineComponent ({
             sendEInvoice,
             prepEReporting,
             sendingEReporting,
-            getEReportingStatus,
-            getEInvoiceStatus,
+            getEReportStatus,
+            getEFactureStatus,
         }
     },
     methods: {
