@@ -87,6 +87,6 @@ class EReportingService:
             invoice.e_reporting_status = EReportingStatus.FAILED
             invoice.e_reporting_rejection_reason = response['error']
             invoice.e_reporting_retry_count += 1
-        invoice.save(update_fields=['e_reporting_status', 'e_reporting_rejection_reason', 'e_reporting_retry_count', 'modified_at'])
+        invoice.save(update_fields=['e_reporting_status', 'e_reporting_rejection_reason', 'e_reporting_retry_count', 'modified_at', 'e_reporting_last_response', 'e_reporting_last_payload', 'e_reporting_reference'])
         
         return invoice
