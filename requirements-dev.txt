@@ -1,6 +1,6 @@
 # Backend runtime dependencies for Python 3.14 and Django 6.0.
 # Keep this file focused on direct dependencies; pip resolves transitive pins.
-Django==6.0.5
+Django==6.0.6
 
 # API and authentication
 djangorestframework==3.17.1
