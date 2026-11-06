@@ -4,13 +4,11 @@ import vue from '@vitejs/plugin-vue'
 import path from 'path'
 
 export default defineConfig({
-  plugins: [
-      vue()
-  ],
+  plugins: [vue()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src')
-    }
+      '@': path.resolve(__dirname, './src'),
+    },
   },
   server: {
     port: 8080,
@@ -20,14 +18,18 @@ export default defineConfig({
         changeOrigin: true,
         secure: false,
       },
-    }
+    },
+  },
+  test: {
+    environment: 'jsdom',
+    include: ['src/**/*.spec.js'],
   },
   build: {
     outDir: path.resolve(__dirname, './dist'),
     assetsDir: 'assets',
     filenameHashing: true,
-    publicPath: import.meta.VUE_APP_NODE_ENV === 'production' ? '/static/': 'http://0.0.0.0:8080',
+    publicPath: import.meta.VUE_APP_NODE_ENV === 'production' ? '/static/' : 'http://0.0.0.0:8080',
     outputDir: './dist/',
-    stats: 'errors-only'
-  }
+    stats: 'errors-only',
+  },
 })

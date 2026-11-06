@@ -126,3 +126,6 @@ invoices_venv/
 .mypy_cache/
 .dmypy.json
 dmypy.json
+
+# Agent (workflows agent-*)
+/.agent-out
