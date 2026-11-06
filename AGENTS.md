@@ -91,3 +91,10 @@ Dans le résumé de PR, indiquer :
 - les fichiers ou zones principales ;
 - les tests/contrôles exécutés ;
 - les limites connues, notamment si un contrôle n'a pas pu être exécuté pour une raison d'environnement.
+
+## Workflow agentique (issues → PR)
+
+Le cycle ticket → spec → implémentation → PR est décrit dans
+`docs/agentic-workflow.md`. Toutes les vérifications passent par
+`bash scripts/agent/run.sh` (`check`, `migrations`, `test-api`, `test-web`,
+`build-web`, `all`) et `bash scripts/agent/format-changed.sh`.
